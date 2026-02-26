@@ -1,0 +1,190 @@
+2026-02-26T08:52:48.087+01:00  WARN 7788 --- [hotel_booking] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14h48m39s264ms607µs100ns).
+2026-02-26T08:54:08.963+01:00  INFO 7788 --- [hotel_booking] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 8 class path changes (0 additions, 0 deletions, 8 modifications)
+2026-02-26T08:54:08.985+01:00  INFO 7788 --- [hotel_booking] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:08.989+01:00  INFO 7788 --- [hotel_booking] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-26T08:54:09.004+01:00  INFO 7788 --- [hotel_booking] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-02-26T08:54:09.108+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Starting BookingApplication using Java 21.0.9 with PID 7788 (C:\Users\alexa\hotel-booking\backend\booking\target\classes started by alexa in C:\Users\alexa\hotel-booking)
+2026-02-26T08:54:09.108+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-02-26T08:54:09.471+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26T08:54:09.484+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
+2026-02-26T08:54:09.577+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-02-26T08:54:09.578+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26T08:54:09.579+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-02-26T08:54:09.608+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-26T08:54:09.609+01:00  INFO 7788 --- [hotel_booking] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 498 ms
+2026-02-26T08:54:09.639+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-26T08:54:09.645+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-26T08:54:09.657+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26T08:54:09.660+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-02-26T08:54:09.682+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f0cfacc
+2026-02-26T08:54:09.683+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-02-26T08:54:09.685+01:00  WARN 7788 --- [hotel_booking] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-26T08:54:09.757+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26T08:54:09.783+01:00  INFO 7788 --- [hotel_booking] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:09.894+01:00  WARN 7788 --- [hotel_booking] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-26T08:54:09.976+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-02-26T08:54:09.987+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-02-26T08:54:09.990+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Started BookingApplication in 0.911 seconds (process running for 54155.977)
+2026-02-26T08:54:09.994+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-02-26T08:54:11.819+01:00  INFO 7788 --- [hotel_booking] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-02-26T08:54:11.840+01:00  INFO 7788 --- [hotel_booking] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:11.843+01:00  INFO 7788 --- [hotel_booking] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-02-26T08:54:11.854+01:00  INFO 7788 --- [hotel_booking] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-02-26T08:54:11.930+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Starting BookingApplication using Java 21.0.9 with PID 7788 (C:\Users\alexa\hotel-booking\backend\booking\target\classes started by alexa in C:\Users\alexa\hotel-booking)
+2026-02-26T08:54:11.931+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-02-26T08:54:12.198+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26T08:54:12.212+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 2 JPA repository interfaces.
+2026-02-26T08:54:12.283+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-02-26T08:54:12.284+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26T08:54:12.285+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-02-26T08:54:12.306+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-26T08:54:12.306+01:00  INFO 7788 --- [hotel_booking] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 373 ms
+2026-02-26T08:54:12.339+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-26T08:54:12.341+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-26T08:54:12.354+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26T08:54:12.355+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-02-26T08:54:12.371+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e5a8460
+2026-02-26T08:54:12.371+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-02-26T08:54:12.374+01:00  WARN 7788 --- [hotel_booking] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-26T08:54:12.455+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26T08:54:12.481+01:00  INFO 7788 --- [hotel_booking] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:12.586+01:00  WARN 7788 --- [hotel_booking] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-26T08:54:12.663+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-02-26T08:54:12.670+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-02-26T08:54:12.673+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Started BookingApplication in 0.759 seconds (process running for 54158.659)
+2026-02-26T08:54:12.675+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-02-26T08:54:14.095+01:00  INFO 7788 --- [hotel_booking] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-02-26T08:54:14.103+01:00  INFO 7788 --- [hotel_booking] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:14.104+01:00  INFO 7788 --- [hotel_booking] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-02-26T08:54:14.108+01:00  INFO 7788 --- [hotel_booking] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-02-26T08:54:14.170+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Starting BookingApplication using Java 21.0.9 with PID 7788 (C:\Users\alexa\hotel-booking\backend\booking\target\classes started by alexa in C:\Users\alexa\hotel-booking)
+2026-02-26T08:54:14.170+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-02-26T08:54:14.457+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26T08:54:14.469+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 2 JPA repository interfaces.
+2026-02-26T08:54:14.547+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-02-26T08:54:14.548+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26T08:54:14.549+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-02-26T08:54:14.566+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-26T08:54:14.567+01:00  INFO 7788 --- [hotel_booking] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 394 ms
+2026-02-26T08:54:14.588+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-26T08:54:14.589+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-26T08:54:14.598+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26T08:54:14.599+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-02-26T08:54:14.610+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b28a1f0
+2026-02-26T08:54:14.611+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-02-26T08:54:14.614+01:00  WARN 7788 --- [hotel_booking] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-26T08:54:14.706+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26T08:54:14.734+01:00  INFO 7788 --- [hotel_booking] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:14.814+01:00  WARN 7788 --- [hotel_booking] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-26T08:54:14.888+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-02-26T08:54:14.895+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-02-26T08:54:14.899+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Started BookingApplication in 0.747 seconds (process running for 54160.885)
+2026-02-26T08:54:14.900+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-02-26T08:54:16.313+01:00  INFO 7788 --- [hotel_booking] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2026-02-26T08:54:16.322+01:00  INFO 7788 --- [hotel_booking] [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:16.323+01:00  INFO 7788 --- [hotel_booking] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2026-02-26T08:54:16.330+01:00  INFO 7788 --- [hotel_booking] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2026-02-26T08:54:16.394+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Starting BookingApplication using Java 21.0.9 with PID 7788 (C:\Users\alexa\hotel-booking\backend\booking\target\classes started by alexa in C:\Users\alexa\hotel-booking)
+2026-02-26T08:54:16.395+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-02-26T08:54:16.534+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26T08:54:16.543+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 2 JPA repository interfaces.
+2026-02-26T08:54:16.596+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-02-26T08:54:16.597+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26T08:54:16.598+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-02-26T08:54:16.618+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-26T08:54:16.618+01:00  INFO 7788 --- [hotel_booking] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 220 ms
+2026-02-26T08:54:16.640+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-26T08:54:16.642+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-26T08:54:16.649+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26T08:54:16.650+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2026-02-26T08:54:16.660+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c47872b
+2026-02-26T08:54:16.660+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2026-02-26T08:54:16.663+01:00  WARN 7788 --- [hotel_booking] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-26T08:54:16.711+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26T08:54:16.738+01:00  INFO 7788 --- [hotel_booking] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:16.818+01:00  WARN 7788 --- [hotel_booking] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-26T08:54:16.868+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-02-26T08:54:16.875+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-02-26T08:54:16.877+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Started BookingApplication in 0.497 seconds (process running for 54162.863)
+2026-02-26T08:54:16.879+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-02-26T08:54:18.706+01:00  INFO 7788 --- [hotel_booking] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 4 class path changes (0 additions, 0 deletions, 4 modifications)
+2026-02-26T08:54:18.721+01:00  INFO 7788 --- [hotel_booking] [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:18.722+01:00  INFO 7788 --- [hotel_booking] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2026-02-26T08:54:18.726+01:00  INFO 7788 --- [hotel_booking] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2026-02-26T08:54:18.809+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Starting BookingApplication using Java 21.0.9 with PID 7788 (C:\Users\alexa\hotel-booking\backend\booking\target\classes started by alexa in C:\Users\alexa\hotel-booking)
+2026-02-26T08:54:18.810+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-02-26T08:54:19.011+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26T08:54:19.023+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
+2026-02-26T08:54:19.072+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-02-26T08:54:19.073+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26T08:54:19.073+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-02-26T08:54:19.097+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-26T08:54:19.097+01:00  INFO 7788 --- [hotel_booking] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 285 ms
+2026-02-26T08:54:19.121+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-26T08:54:19.123+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-26T08:54:19.133+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26T08:54:19.134+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2026-02-26T08:54:19.149+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@76743873
+2026-02-26T08:54:19.150+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2026-02-26T08:54:19.152+01:00  WARN 7788 --- [hotel_booking] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-26T08:54:19.219+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26T08:54:19.242+01:00  INFO 7788 --- [hotel_booking] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:19.333+01:00  WARN 7788 --- [hotel_booking] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-26T08:54:19.404+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-02-26T08:54:19.411+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-02-26T08:54:19.415+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Started BookingApplication in 0.625 seconds (process running for 54165.401)
+2026-02-26T08:54:19.416+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-02-26T08:54:20.833+01:00  INFO 7788 --- [hotel_booking] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-02-26T08:54:20.853+01:00  INFO 7788 --- [hotel_booking] [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:20.854+01:00  INFO 7788 --- [hotel_booking] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2026-02-26T08:54:20.867+01:00  INFO 7788 --- [hotel_booking] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2026-02-26T08:54:20.963+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Starting BookingApplication using Java 21.0.9 with PID 7788 (C:\Users\alexa\hotel-booking\backend\booking\target\classes started by alexa in C:\Users\alexa\hotel-booking)
+2026-02-26T08:54:20.965+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-02-26T08:54:21.169+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26T08:54:21.182+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
+2026-02-26T08:54:21.256+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-02-26T08:54:21.257+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26T08:54:21.257+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-02-26T08:54:21.282+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-26T08:54:21.282+01:00  INFO 7788 --- [hotel_booking] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 313 ms
+2026-02-26T08:54:21.305+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-26T08:54:21.307+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-26T08:54:21.311+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26T08:54:21.312+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2026-02-26T08:54:21.325+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6f5751e5
+2026-02-26T08:54:21.325+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2026-02-26T08:54:21.327+01:00  WARN 7788 --- [hotel_booking] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-26T08:54:21.394+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26T08:54:21.415+01:00  INFO 7788 --- [hotel_booking] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:21.476+01:00  WARN 7788 --- [hotel_booking] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-26T08:54:21.520+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-02-26T08:54:21.526+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-02-26T08:54:21.528+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Started BookingApplication in 0.603 seconds (process running for 54167.515)
+2026-02-26T08:54:21.530+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-02-26T08:54:22.958+01:00  INFO 7788 --- [hotel_booking] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-02-26T08:54:22.971+01:00  INFO 7788 --- [hotel_booking] [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:22.972+01:00  INFO 7788 --- [hotel_booking] [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2026-02-26T08:54:22.979+01:00  INFO 7788 --- [hotel_booking] [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2026-02-26T08:54:23.045+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Starting BookingApplication using Java 21.0.9 with PID 7788 (C:\Users\alexa\hotel-booking\backend\booking\target\classes started by alexa in C:\Users\alexa\hotel-booking)
+2026-02-26T08:54:23.046+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-02-26T08:54:23.145+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-26T08:54:23.156+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 2 JPA repository interfaces.
+2026-02-26T08:54:23.197+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-02-26T08:54:23.199+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-26T08:54:23.200+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-02-26T08:54:23.213+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-26T08:54:23.213+01:00  INFO 7788 --- [hotel_booking] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 166 ms
+2026-02-26T08:54:23.233+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-26T08:54:23.236+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-26T08:54:23.240+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-26T08:54:23.241+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2026-02-26T08:54:23.252+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e03efc2
+2026-02-26T08:54:23.253+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2026-02-26T08:54:23.254+01:00  WARN 7788 --- [hotel_booking] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-26T08:54:23.306+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-26T08:54:23.326+01:00  INFO 7788 --- [hotel_booking] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-26T08:54:23.384+01:00  WARN 7788 --- [hotel_booking] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-26T08:54:23.425+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-02-26T08:54:23.431+01:00  INFO 7788 --- [hotel_booking] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-02-26T08:54:23.434+01:00  INFO 7788 --- [hotel_booking] [restartedMain] com.hotel.booking.BookingApplication     : Started BookingApplication in 0.4 seconds (process running for 54169.421)
+2026-02-26T08:54:23.436+01:00  INFO 7788 --- [hotel_booking] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
