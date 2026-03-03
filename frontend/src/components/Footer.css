@@ -11,12 +11,6 @@
     --text-color-hover: rgb(202, 200, 200);
 }
 
-.hero-section {
-    max-height: 30vh;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
 .site-footer { 
     height: var(--footer-height);
     position: fixed;

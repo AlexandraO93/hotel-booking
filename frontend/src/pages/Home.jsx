@@ -17,7 +17,7 @@ export default function Home() {
 
                     <div className="hero-content">
                         <h1 className="hero-title">Välkommen till Roslagen Escape</h1>
-                        <p className="hero-subtitle">Här kommer startsidan byggas fram sakta men säkert</p>
+                        <p className="hero-subtitle">Upplev stillheten vid vattnet där naturens lugn möter modern komfort och omtanke.</p>
                         
                         <div className="booking-wrapper">
                             <BookingBar />

@@ -1,6 +1,5 @@
 .hero-section {
   position: relative;
-  /* fill 100dvh minus the fixed navbar and footer heights */
   height: calc(100dvh - var(--header-height) - var(--footer-height));
   min-height: calc(100dvh - var(--header-height) - var(--footer-height));
 }
@@ -46,6 +45,7 @@
   color: white !important;
   margin-bottom: 2rem;
   max-width: 600px;
+
 }
 
 @media (min-width:321px) and (max-width:374px) {
@@ -71,7 +71,7 @@
 
 @media (min-width:425px) and (max-width:767px) {
   .hero-bg-img {
-    max-height: 730px;
+    max-height: 715px;
   }
 
   .hero-title {
@@ -86,7 +86,7 @@
 
 @media (min-width:768px) {
   .hero-bg-img {
-    max-height: 850px;
+    max-height: 53rem;
   }
 
   .hero-title {
@@ -96,5 +96,14 @@
 
   .hero-subtitle {
     font-size: 1.1rem;
+    white-space: nowrap;
+    align-self: center;
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width:1024px) {
+  .hero-bg-img {
+    max-height: 55rem;
   }
 }

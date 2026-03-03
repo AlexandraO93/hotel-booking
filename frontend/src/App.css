@@ -1,11 +1,8 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/* #root is the React mount point – don't constrain it.
+   Let the app-root and components handle their own layouts. */
 
 .logo {
+  height: 6em;
   height: 6em;
   padding: 1.5em;
   will-change: filter;

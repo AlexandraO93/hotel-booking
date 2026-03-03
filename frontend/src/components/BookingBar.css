@@ -237,7 +237,7 @@
     }
 }
 
-@media (min-width:426px) and (max-width:768px) {
+@media (min-width:426px) and (max-width:767px) {
     .booking-container {
         min-width: 550px;
         margin: 5rem auto 1rem;
@@ -250,9 +250,18 @@
     .booking-field label{
         font-size: 0.8rem;
     }
+
+    .child-ages-text,
+    .age-input-field select {
+        font-size: 0.7rem;
+    }
+
+    .age-input-field select {
+        max-width: 2.8rem !important;
+    }
 }
 
-@media (min-width:769px) {
+@media (min-width:768px) {
     .booking-container {
         min-width: 570px;
         margin: 3rem auto 1rem;
@@ -268,7 +277,7 @@
 
     .age-input-field select,
     .age-input-field label {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     .child-ages-text {
