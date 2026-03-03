@@ -81,9 +81,9 @@ const BookingBar = () => {
               <label>Barn {index + 1}</label>
               <select>
                 <option value="">Välj ålder</option>
-                {Array.from({ length: 12 }).map((_, age) => (
+                {Array.from({ length: 13 }).map((_, age) => (
                   <option key={age} value={age + 1}>
-                    {age + 1} år
+                    {age} år
                   </option>
                 ))}
               </select>
