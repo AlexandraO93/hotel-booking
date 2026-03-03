@@ -16,7 +16,7 @@
   padding: clamp(0.4rem, 1.5vw, 0.75rem);
   width: 100%;
   max-width: 420px;
-  margin: 11rem auto 1rem;
+  margin: 3rem auto 1rem;
   box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
 }
@@ -140,9 +140,15 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.child-ages-text {
+    font-size: 0.55em;
+    font-weight: 200;
+    margin-bottom: -1px;
+}
+
 .age-instruction {
   color: white;
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   font-weight: 300;
   margin-bottom: 0.1rem;
 }
@@ -169,18 +175,19 @@
 .age-input-field select {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  color: rgb(8, 8, 8);
   padding: 0.1rem 0.1rem;
   border-radius: 0.25rem;
   outline: none;
   font-size: 0.5rem;
+  max-width: 2.5rem;
 }
 
 @media (min-width:321px) and (max-width:375px) {
     .booking-container {
         width: 100%;
         min-width: 320px;
-        margin: 19rem auto 1rem;
+        margin: 5rem auto 1rem;
         box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.3);
         box-sizing: border-box;
     }
@@ -218,7 +225,7 @@
 @media (min-width:376px) and (max-width:425px) {
     .booking-container {
         min-width: 360px;
-        margin: 21rem auto 1rem;
+        margin: 5rem auto 1rem;
     }
 
     .booking-field input[type="date"], 
@@ -233,7 +240,7 @@
 @media (min-width:426px) and (max-width:768px) {
     .booking-container {
         min-width: 550px;
-        margin: 22rem auto 1rem;
+        margin: 5rem auto 1rem;
     }
 
     .booking-field input[type="date"], 
@@ -257,5 +264,14 @@
     .booking-submit,
     .booking-field label{
         font-size: 0.7rem;
+    }
+
+    .age-input-field select,
+    .age-input-field label {
+        font-size: 0.7rem;
+    }
+
+    .child-ages-text {
+        font-size: 0.8rem;
     }
 }
