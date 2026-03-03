@@ -93,36 +93,6 @@
   box-sizing: border-box;
 }
 
-@media (max-width:767px) {
-  .navBar .navbar-collapse {
-    display: block;
-    max-height: 0;
-    opacity: 0;
-    transition: max-height 100ms ease, opacity 100ms ease;
-  }
-  .navBar .navbar-collapse.show {
-    max-height: 1000px;
-    opacity: 1;
-  }
-}
-
-@media (min-width:768px) {
-  .navBar .navbar-collapse {
-    display: flex;
-    flex-direction: row !important;
-    align-items: center !important;
-    position: static !important;
-    width: auto !important;
-    max-width: none !important;
-    background: transparent !important;
-    border: none !important;
-    opacity: 1 !important;
-    max-height: none !important;
-    overflow: visible !important;
-    box-shadow: none !important;
-  }
-}
-
 .navBar .navbar-collapse .nav-link {
   display: block;
   width: 100%;
@@ -141,13 +111,13 @@
   transition: none !important;
 }
 
-@media (min-width:321px) and (max-width:375px) {
+@media (min-width:321px) and (max-width:374px) {
   .navBar .navLinks .nav-link {
     font-size: 0.7rem;
   }
 }
 
-@media (min-width:376px) and (max-width:425px) {
+@media (min-width:375px) and (max-width:424px) {
   .navBar {
     height: 65px;
   }
@@ -155,9 +125,14 @@
   .navBar .navLinks .nav-link {
     font-size: 0.8rem;
   }
+
+  .navBar .navbar-collapse {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
 
-@media (min-width:426px) and (max-width:767px) {
+@media (min-width:425px) and (max-width:767px) {
   .navBar {
     height: var(--header-height-768);
   }
