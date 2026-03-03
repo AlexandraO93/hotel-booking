@@ -74,9 +74,21 @@ const BookingBar = () => {
     {/* RAD 5 */}
     {children > 0 && (
       <div className="child-ages-section">
-        <p>Ange ålder på barnen vid incheckning:</p>
+        <p className="child-ages-text">Ange ålder på barnen vid incheckning:</p>
         <div className="age-inputs-grid">
-           {/* Din befintliga ålders-loop här */}
+          {Array.from({ length: Number(children) }).map((_, index) => (
+            <div className="age-input-field" key={index}>
+              <label>Barn {index + 1}</label>
+              <select>
+                <option value="">Välj ålder</option>
+                {Array.from({ length: 12 }).map((_, age) => (
+                  <option key={age} value={age + 1}>
+                    {age + 1} år
+                  </option>
+                ))}
+              </select>
+            </div>
+          ))}
         </div>
       </div>
       )}
