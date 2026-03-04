@@ -1,10 +1,10 @@
 .booking-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: -3.5rem; 
+  margin-top: -3vh; 
   position: relative;
   z-index: 10;
-  padding: 0 1.85rem;
+  padding: 0 clamp(0.5rem, 2vw, 2rem);
 }
 
 .booking-container {
@@ -14,9 +14,9 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 0.75rem;
   padding: clamp(0.4rem, 1.5vw, 0.75rem);
-  width: 100%;
-  max-width: 420px;
-  margin: 3rem auto 1rem;
+  width: 80vw;
+  max-width: clamp(320px, 75vw, 500px);
+  margin: clamp(12vh, auto, 2vh) auto 2vh;
   box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
 }
@@ -24,73 +24,69 @@
 /* --- 2. GRID LAYOUT (DESKTOP) --- */
 .booking-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(45%, 250px), 1fr));
+  gap: clamp(0.4rem, 1vw, 1rem);
   width: 100%;
 }
 
 /* --- 3. FÄLTEN (DATUM & COUNTERS) --- */
-.booking-field {
+.booking-field,
+.booking-field-date,
+.booking-field-room,
+.booking-field-adults,
+.booking-field-children {
   background: rgba(0, 0, 0, 0.2);
-  padding: 0.15rem 0.25rem;
+  padding: clamp(0.2rem, 0.6vw, 0.5rem);
   border-radius: 0.4rem;
   display: flex;
   flex-direction: column;
 }
 
-.booking-field:nth-of-type(1),
-.booking-field:nth-of-type(2) {
-  grid-column: span 1;
+.booking-field-room {
+  grid-column: 1 / -1;
 }
 
-.booking-field:nth-of-type(3) {
-    grid-column: 1 / -1;
-}
-
-.booking-field:nth-of-type(4),
-.booking-field:nth-of-type(5) {
-    grid-column: span 1;
-}
-
-.booking-field label {
-  font-size: clamp(0.5rem, 0.8vw, 0.6rem);
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.8);
+.booking-field-date label,
+.booking-field-room label,
+.booking-field-adults label,
+.booking-field-children label {
+  font-size: clamp(0.55rem, 0.9vw, 0.8rem);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 0.3rem;
   text-transform: uppercase;
 }
 
 /* --- 4. INPUTS & CONTROLS --- */
-.booking-field input[type="date"] {
+.booking-field-date input[type="date"] {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 0.4rem;
   border: none;
   color: white;
-  font-size: 0.65rem;
-  padding: 0.25rem 0;
+  font-size: clamp(0.6rem, 0.9vw, 0.8rem);
+  padding: clamp(0.2rem, 0.4vw, 0.4rem) 0;
   text-align: center;
-  font-weight: 400;
   outline: none;
   width: 100%;
   cursor: pointer;
 }
 
 .counter-controls {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: rgba(255, 255, 255, 0.15); 
   border-radius: 0.3rem;
-  padding: 0 0.3rem;
-  height: 1rem;
+  padding: 0 clamp(0.2rem, 0.5vw, 0.5rem);
+  height: clamp(1rem, 2vh, 2rem);
 }
 
 .counter-controls button {
-  background: none !important;
-  border: none !important;
-  color: white !important;
-  font-size: 0.65rem !important; 
-  width: 1.4rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: clamp(0.7rem, 1vw, 1rem);
+  width: clamp(1.2rem, 2vw, 2rem);
   height: 100%;
   cursor: pointer;
   display: flex;
@@ -106,21 +102,24 @@
 .count-display {
   color: white;
   font-weight: bold;
-  font-size: 0.65rem;
-  min-width: 1.2rem;
+  font-size: clamp(0.7rem, 1vw, 1rem);
+  min-width: clamp(1rem, 2vw, 2rem);
   text-align: center;
+}
+
+.button-row {
+    grid-column: 1 / -1;
 }
 
 /* --- 5. BOKA-KNAPPEN --- */
 .booking-submit {
-  grid-column: 1 / -1 !important;
-  width: 100% !important;
-  height: 2.2rem; 
+  width: 100%;
+  height: clamp(1.5rem, 5vh, 3rem);
   background-color: rgba(26, 70, 70, 0.9); 
   color: white;
   border: none;
   border-radius: 0.4rem;
-  font-size: 0.6rem;
+  font-size: clamp(0.7rem, 1vw, 1rem);
   font-weight: 600;
   cursor: pointer;
   text-transform: uppercase;
@@ -133,41 +132,33 @@
 
 /* --- 6. ÅLDERSSEKTION (BARN) --- */
 .child-ages-section {
+  grid-column: 1 / -1;
   margin-top: 0rem;
-  padding: 0.4rem;
+  padding: clamp(0.4rem, 1vw, 1rem);
   background: rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .child-ages-text {
-    font-size: 0.55em;
+    font-size: clamp(0.6rem, 1vw, 0.9rem);
     font-weight: 200;
-    margin-bottom: -1px;
-}
-
-.age-instruction {
-  color: white;
-  font-size: 0.5rem;
-  font-weight: 300;
-  margin-bottom: 0.1rem;
+    margin-bottom: 0.3rem;
 }
 
 .age-inputs-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.15rem;
+  gap: clamp(0.2rem, 0.5vw, 0.6rem);
 }
 
 .age-input-field {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
 }
 
 .age-input-field label {
-  font-size: 0.5rem;
-  text-align: left;
+  font-size: clamp(0.5rem, 0.8vw, 0.7rem);
   color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
 }
@@ -175,72 +166,18 @@
 .age-input-field select {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: rgb(8, 8, 8);
-  padding: 0.1rem 0.1rem;
+  color: black;
+  padding: clamp(0.1rem, 0.3vw, 0.3rem);
   border-radius: 0.25rem;
   outline: none;
-  font-size: 0.5rem;
-  max-width: 2.5rem;
+  font-size: clamp(0.5rem, 0.8vw, 0.8rem);
+  max-width: clamp(2.5rem, 2vw, 3rem);
 }
 
-@media (min-width:321px) and (max-width:375px) {
+
+@media (min-width:480px) {
     .booking-container {
-        width: 100%;
-        min-width: 320px;
-        margin: 5rem auto 1rem;
-        box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.3);
-        box-sizing: border-box;
-    }
-
-    .booking-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .booking-field {
-        grid-column: span 1;
-    }
-
-    .booking-submit, .child-ages-section {
-        grid-column: span 1;
-    }
-
-    .booking-field:nth-of-type(1),
-    .booking-field:nth-of-type(2) {
-        flex: 1 1 47% !important;
-    }
-
-    .booking-field:nth-of-type(3),
-    .booking-field:nth-of-type(4),
-    .booking-field:nth-of-type(5) {
-        flex: 1 1 1 30% !important;
-    }
-
-    .booking-submit {
-        flex: 1 1 100% !important;
-        margin-left: 0 !important;
-        margin-top: 0.4rem;
-    }
-}
-
-@media (min-width:376px) and (max-width:425px) {
-    .booking-container {
-        min-width: 360px;
-        margin: 5rem auto 1rem;
-    }
-
-    .booking-field input[type="date"], 
-    .counter-controls button, 
-    .count-display,
-    .booking-submit,
-    .booking-field label{
-        font-size: 0.7rem;
-    }
-}
-
-@media (min-width:426px) and (max-width:767px) {
-    .booking-container {
-        min-width: 550px;
-        margin: 5rem auto 1rem;
+        max-width: 600px;
     }
 
     .booking-field input[type="date"], 
@@ -261,10 +198,49 @@
     }
 }
 
+@media (min-width: 600px) {
+    .booking-container {
+        max-width: 850px;
+        width: 80vw;
+    }
+
+    .booking-grid {
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        gap: 10px;
+        width: 100% !important;
+    }
+
+    .booking-field-date {
+        grid-column: span 3 !important;
+        width: 100%;
+    }
+
+    .booking-field-room,
+    .booking-field-adults,
+    .booking-field-children {
+        grid-column: span 2 !important;
+        width: 100% !important;
+        max-width: none;
+    }
+
+    .counter-controls, 
+    .booking-field-date input {
+        width: 100% !important;
+    }
+
+    .button-row,
+    .child-ages-section {
+        grid-column: span 6;
+    }
+}
+
 @media (min-width:768px) {
     .booking-container {
-        min-width: 570px;
-        margin: 3rem auto 1rem;
+        width: 60vw; 
+        min-width: 450px; 
+        max-width: 600px;
+        margin: 5vh auto 2vh;
     }
 
     .booking-field input[type="date"], 
@@ -272,7 +248,7 @@
     .count-display,
     .booking-submit,
     .booking-field label{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .age-input-field select,
@@ -284,3 +260,41 @@
         font-size: 0.8rem;
     }
 }
+
+@media (min-width: 1024px) {
+    .booking-container {
+        min-width: 0 !important;
+        width: 35vw !important;
+        max-width: 450px !important;
+        margin: 4vh auto;
+        padding: 1.2rem !important;
+    }
+
+    .booking-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px;
+    }
+
+    .booking-field-date {
+        grid-column: span 1 !important;
+    }
+
+    .booking-field-room {
+        grid-column: span 2 !important;
+    }
+
+    .booking-field-adults,
+    .booking-field-children {
+        grid-column: span 1 !important;
+    }
+
+    .button-row,
+    .child-ages-section {
+        grid-column: span 2 !important;
+    }
+}
+
+/*
+Funkar det att commita nu?
+*/
