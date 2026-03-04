@@ -1,20 +1,11 @@
 :root {
-  --header-height-mobile: 56px;
-  --header-height-768: 75px;
-  --header-height-1024: 65px;
+  --header-height: clamp(60px,10vh,80px);
 
-  --header-height: var(--header-height-mobile);
-
-  --nav-bg: rgba(11,45,44,0.78);
-  --nav-bg-solid: rgba(11,45,44,0.95);
-  --nav-bg-opac: rgba(11,45,44,0.78);
-  --link-hover: rgba(26, 70, 70, 0.69);
-  --link-bg-dropdown: rgba(33, 75, 73, 0.75);
-  --border-color: rgba(255,255,255,0.06);
-  --border-bottom: rgba(255,255,255,0.04);
-  --link-border: rgba(255,255,255,0.06);
+  --nav-bg: #405958;
+  --link-bg-dropdown: #395252;
   --link-text-color: rgb(230, 229, 229);
-  box-sizing: border-box;
+  --link-hover: rgba(25, 58, 57, 0.35);
+  --border-color: rgba(25, 58, 57, 0.582);
 }
 
 .navBar {
@@ -25,32 +16,68 @@
   height: var(--header-height);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   z-index: 1200;
-  background-color: var(--nav-bg-opac);
-  -webkit-backdrop-filter: blur(6px);
+  background-color: var(--nav-bg);
   backdrop-filter: blur(6px);
   box-sizing: border-box;
-  padding-left: 1em !important;
+  padding: 0 clamp(1rem, 3vw, 2.5rem);
 }
 
 .navBar .logo-small {
   height: calc(var(--header-height) * 0.60);
   max-height: 55px;
-  margin-right: 1.1em;
-  display: inline-block;
-  vertical-align: middle;
+  width: auto;
+}
+
+/*---Dropdown meny---*/
+.navBar .navbar-collapse {
+  position: absolute;
+  top: var(--header-height);
+  right: clamp(0.5rem, 3vw, 3rem);
+  left:auto;
+  width: clamp(200px, 60vw, 300px);
+  background: var(--link-bg-dropdown);
+  margin-top: -0.1rem;
+  padding: clamp(0.4rem, 1vh, 1rem) 0;
+  border: 2px solid rgba(25, 58, 57, 0.582);
+  border-radius: 6px;
+  /* Animation */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease, opacity 300ms ease;
+  z-index: 1300;
+}
+
+.navBar .navbar-collapse.show {
+  max-height: 80vh;
+  opacity: 1;
+}
+
+/*---Links---*/
+.navBar .navbar-collapse .nav-link {
+  display: block;
+  width: 100%;
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+  padding: 0.5rem 0.7rem;
+  margin: 0;                 
+  border-radius: 0;
+  color: var(--link-text-color);
+  text-decoration: none;
 }
 
 .navBar .navLinks .nav-link {
-  padding: 0 0.9rem 0.3rem !important;
-  border-bottom: 1px solid var(--nav-bg-solid);
-  border-radius: 7px;
-  font-size: 0.6em;
-  height: 100%;
-  font-weight: 500;
-  color: var(--link-text-color);
-  display: inline-flex;
-  align-items: center;
+  border-bottom: 2px solid var(--border-color); 
+}
+
+.navBar .navLinks .nav-link:hover {
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.navBar .navbar-collapse.no-transition {
+  transition: none !important;
 }
 
 .navBar .navLinks .nav-link:nth-child(1) {
@@ -64,159 +91,59 @@
 }
 
 
-.navBar .navLinks .nav-link:hover {
-  color: black;
-  transition: background-color 0.35s ease;
-}
-
-.navBar .container,
-.navBar .navbar-collapse { 
-    max-width: 100%; 
-    box-sizing: border-box; 
-}
-
-.navBar .container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-.navBar .navbar-collapse {
-  position: relative;
-  max-width: 100%;
-  background: var(--link-bg-dropdown);
-  margin-top: 0.15rem;
-  padding: 0rem 0.9em;
-  border: 2px solid rgba(25, 58, 57, 0.582);
-  border-radius: 3px;
-  box-shadow: none;
-  overflow: visible;
-  box-sizing: border-box;
-}
-
-.navBar .navbar-collapse .nav-link {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.6rem 0.75rem;
-  margin: 0;                 
-  border-bottom: 1px solid var(--nav-bg-solid); 
-  border-radius: 0;
-}
-
-.navBar .navbar-collapse.show {
-  max-height: 1000px;
-  opacity: 1;
-}
-.navBar .navbar-collapse.no-transition {
-  transition: none !important;
-}
-
-@media (min-width:321px) and (max-width:374px) {
-  .navBar .navLinks .nav-link {
-    font-size: 0.7rem;
-  }
-}
-
-@media (min-width:375px) and (max-width:424px) {
-  .navBar {
-    height: 65px;
-  }
-
-  .navBar .navLinks .nav-link {
-    font-size: 0.8rem;
-  }
-
-  .navBar .navbar-collapse {
-    width: 100%;
-    margin-top: 10px;
-  }
-}
-
-@media (min-width:425px) and (max-width:767px) {
-  .navBar {
-    height: var(--header-height-768);
-  }
-
-  .navBar .logo-small {
-    height: calc(var(--header-height-768) * 0.60);
-  }
-
-  .navbar-toggler {
-    display: inline-flex;
-  }
-
-  .navBar .navbar-collapse {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .navBar .navLinks .nav-link {
-    font-size: 1rem;
-    width: 100%;
-    padding: 0.25rem 1rem !important;
-  }
-}
-
 @media (min-width:768px) {
   .navBar {
-    height: var(--header-height-1024);
-    padding-left: 1.2rem;
+    height: var(--header-height);
+    padding: 0 rem !important;
   }
 
   .navBar .logo-small {
-    height: calc(var(--header-height-1024) * 0.60);
-    max-height: 48px;
+    height: calc(var(--header-height) * 0.60);
   }
 
-  .navbar-toggler {
-    display: none;
+  .navBar-toggler {
+    display: none !important;
   }
 
   .navBar .navbar-collapse {
-    display: flex;
+    display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     position: static !important;
     width: auto !important;
     max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
     background: transparent !important;
     border: none !important;
     opacity: 1 !important;
     max-height: none !important;
     overflow: visible !important;
     box-shadow: none !important;
-  }
-
-  .navBar .navLinks .nav-link:nth-child(n) {
-    margin-top: 0 !important;
-    border-bottom: none;
-    height: auto;
-    padding: 0.5rem 0.5rem !important;
-  } 
-
-  .navBar .navLinks {
-    display: flex !important;
-    flex-direction: row;
-    margin: 0;
-    gap: 5px;
+    white-space: nowrap;
   }
 
   .navBar .navLinks .nav-link {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.25rem 0.9rem !important;
-    font-size: 0.9em;
-    color: var(--link-text-color);
+    margin: 0 !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.75rem; 
+    font-family: sans-serif;
+    font-weight: 500;
+    border-bottom: none !important;
+    height: auto;
     background: transparent;
-    white-space: nowrap;
+    color: var(--link-text-color);
+    text-transform: uppercase; 
+    letter-spacing: 0.05em;
+    display: inline-block;
   }
 
   .navBar .navLinks .nav-link:hover,
   .navBar .navLinks .nav-link:focus {
     background: var(--link-hover);
     color: var(--link-text-color);
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 6px;
+    transition: background-color 0.4s ease;
     outline: none;
   }
 }
