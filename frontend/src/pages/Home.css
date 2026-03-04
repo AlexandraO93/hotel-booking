@@ -36,6 +36,7 @@
   margin-bottom: clamp(0.5rem, 2vh, 1.5rem);
   text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
   line-height: 1.2;
+  z-index: 2;
 }
 
 .hero-subtitle {
@@ -43,6 +44,7 @@
   max-width: clamp(300px, 80vw, 800px);
   margin-bottom: 2rem;
   line-height: 1.5;
+  z-index: 2;
 }
 
 @media (min-width:321px) and (max-width:374px) {
