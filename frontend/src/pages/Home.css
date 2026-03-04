@@ -1,13 +1,10 @@
 .hero-section {
   position: relative;
   height: calc(100dvh - var(--header-height) - var(--footer-height));
-  min-height: calc(100dvh - var(--header-height) - var(--footer-height));
-}
-
-.hero-bg-img {
-  background-position: center center;
-  background-size: cover;
-  transition: background-position 0.3s ease;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .hero-bg-img {
@@ -17,35 +14,35 @@
   background-position: center top;
   background-repeat: no-repeat;
   z-index: 1;
+  max-height: clamp(500px, 80vh, 55rem);
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: 45px;
-  padding-bottom: 6rem;
+  padding: clamp(0.5rem, 4vh, 4rem);
   color: white;
+  width: 100%;
+  max-width: 1200px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .hero-title {
-  font-size: 1.1rem;
+  font-size: clamp(1.3rem, 6vw, 3.5rem);
   font-weight: 700;
-  color: white !important; /* Tvingar vit färg */
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.4); /* Ger texten lite djup */
+  margin-bottom: clamp(0.5rem, 2vh, 1.5rem);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  line-height: 1.2;
 }
 
 .hero-subtitle {
-  font-size: 0.7rem;
-  color: white !important;
+  font-size: clamp(0.7rem, 2.5vw,1.3rem);
+  max-width: clamp(300px, 80vw, 800px);
   margin-bottom: 2rem;
-  max-width: 600px;
-
+  line-height: 1.5;
 }
 
 @media (min-width:321px) and (max-width:374px) {
