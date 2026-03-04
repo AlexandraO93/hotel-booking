@@ -98,3 +98,7 @@ const BookingBar = () => {
 };
 
 export default BookingBar;
+
+/*
+Måste testa här med..
+*/
