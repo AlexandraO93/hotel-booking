@@ -80,8 +80,18 @@
 
 @media (min-width:768px) {
   .logo-footer{
-    width: clamp(50px, 7vw, 90px);
-    height: auto;
-    margin-top: 0.8rem;
+    width: clamp(60px, 15vw, 120px);
+  }
+}
+
+@media (min-width:1024px) {
+  .logo-footer{  
+    width: clamp(60px, 15vw, 90px);
+  }
+}
+
+@media (min-width:2560px) {
+  .logo-footer{  
+    width: clamp(80px, 20vw, 125px);
   }
 }

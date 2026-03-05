@@ -7,6 +7,7 @@ import Room from "./pages/Room";
 import FoodDrinks from "./pages/Food-drinks"
 import AboutUs from "./pages/About-us";
 import Contact from "./pages/Contact";
+import Qa from "./pages/Qa";
 
 function App() {
   return (
@@ -14,12 +15,13 @@ function App() {
       <RoslagenNavBar />
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/room" element={<Room />} />
           <Route path="/food-drinks" element={<FoodDrinks />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/qa" element={<Qa />} />
         </Routes>
       </main>
       <Footer />

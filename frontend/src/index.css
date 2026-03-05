@@ -13,28 +13,24 @@
   -moz-osx-font-smoothing: grayscale;
 
   --header-height: 64px; /* fallback */
-  --footer-height: 72px; /* fallback */
+  --footer-height: clamp(90px, 12vh, 130px); /* fallback */
 
 }
 
-body {
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
   min-width: 320px;
   min-height: 100vh;
   background-color: rgba(20, 48, 47, 0.79);
+  padding-bottom: var(--footer-height);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
-
-
-
-html, body, #root { 
-  height: 100%; 
-  margin: 0;
 }
 
 .app-root {
