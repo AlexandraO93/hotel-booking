@@ -94,7 +94,7 @@
 @media (min-width:768px) {
   .navBar {
     height: var(--header-height);
-    padding: 0 rem !important;
+    padding: 0 1rem !important;
   }
 
   .navBar .logo-small {
