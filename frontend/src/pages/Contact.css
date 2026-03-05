@@ -141,16 +141,18 @@ form input {
 
 @media (min-width: 375px) {
     .contact-title {
-        font-size: clamp(2.5rem, 8vw, 4.5rem);
+        font-size: clamp(2rem, 6vw, 4.5rem);
         margin-bottom: clamp(0.3rem, 2vh, 1.5rem);
     }
 
     .contact-subtitle {
-        font-size: clamp(0.9rem, 3vw, 3.5rem);
+        font-size: clamp(0.9rem, 2vw, 3.5rem);
+        width: 60%;
     }
 
     #qa {
-        font-size: clamp(0.5rem, 3vw, 3rem);
+        font-size: clamp(0.5rem, 1.8vw, 3rem);
+        padding: 0.5rem 0.9rem;
     }
 
     .ending-slogan {
