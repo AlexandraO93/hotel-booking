@@ -1,0 +1,90 @@
+.about-us-page {
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.about-us-page main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 2;
+}
+
+.about-us-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center 20% top;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.hero-section-about {
+    width: min(85vw, 600px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    z-index: 2;
+}
+
+.headline-about-us {
+    font-size: clamp(1rem, 5vw, 2.3rem);
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 90vw;
+}
+
+.about-us-text {
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+    line-height: 1.2;
+    text-align: left;
+    font-weight: 300;
+}
+
+.facts {
+    margin-top: 3rem;
+    font-weight: 700;
+}
+
+.facts-details {
+    margin-top: -1rem;
+}
+
+@media (min-width: 768px) {
+    .headline-about-us {
+        margin-top: 3rem;
+    }
+
+    .about-us-text {
+        font-size: clamp(1rem, 3vw, 2.5rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-us-text {
+    min-width: 875px;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .headline-about-us {
+        font-size: 4rem;
+    }
+
+    .about-us-text {
+        min-width: 1300px;
+        font-size: 1.8rem;
+    }
+}
+
