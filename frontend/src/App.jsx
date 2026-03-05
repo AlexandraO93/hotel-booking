@@ -15,7 +15,7 @@ function App() {
       <RoslagenNavBar />
       <main className="main-content">
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/hotel-booking" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/room" element={<Room />} />
           <Route path="/food-drinks" element={<FoodDrinks />} />

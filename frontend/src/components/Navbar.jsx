@@ -36,7 +36,7 @@ function RoslagenNavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           
           <Nav className="me-auto navLinks gap-3">
-            <Nav.Link as={Link} to="/home" onClick={() => setExpanded(false)}>Hem</Nav.Link>
+            <Nav.Link as={Link} to="/hotel-booking" onClick={() => setExpanded(false)}>Hem</Nav.Link>
             <Nav.Link as={Link} to="/booking" onClick={() => setExpanded(false)}>Boka</Nav.Link>
             <Nav.Link as={Link} to="/room" onClick={() => setExpanded(false)}>Rum</Nav.Link>
             <Nav.Link as={Link} to="/food-drinks" onClick={() => setExpanded(false)}>Mat & Dryck</Nav.Link>
