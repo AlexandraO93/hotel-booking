@@ -1,11 +1,13 @@
 import React from "react";
 import "./Footer.css";
 import LogoFooter from "../assets/logo-footer.png";
+import {Link} from "react-router-dom";
 
 export default function Footer() {
     return (
         <footer className="site-footer" role="contentinfo">
             <div className="footer-grid">
+                
                 <div className="footer-left">
                     <p className="contact-line">
                         <strong>Telefon: </strong> <br className="mobile-break"/>
@@ -30,11 +32,12 @@ export default function Footer() {
                 
                 <div className="footer-right" aria-label="Footer navigation">
                     <nav>
-                        <a href="/about-us">Om oss</a>
-                        <a href="/contact">Kontakta oss</a>
-                        <a href="/qa">Frågor och Svar</a>
+                        <Link id="about-us" to="/about-us">Om oss</Link>
+                        <Link id="contact" to="/contact">Kontakta oss</Link>
+                        <Link id="qa-link" to="/qa">Frågor och Svar</Link>
                     </nav>
                 </div>
+
             </div>
         </footer>
     );

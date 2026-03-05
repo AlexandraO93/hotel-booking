@@ -6,18 +6,18 @@
   align-items: flex-start;
   justify-content: center;
   width: 100%;
+  padding-bottom: calc(var(--footer-height) + 1rem);
 }
 
 .hero-bg-img {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   z-index: 1;
-  max-height: clamp(500px, 80vh, 55rem);
 }
 
 .hero-content {
@@ -34,7 +34,7 @@
 }
 
 .hero-title {
-  font-size: clamp(1.3rem, 6vw, 3.5rem);
+  font-size: clamp(1.3rem, 6vw, 3.3rem);
   font-weight: 700;
   margin-bottom: clamp(0.5rem, 2vh, 1.5rem);
   text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
@@ -77,12 +77,12 @@
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     margin-top: 1rem;;
   }
 
   .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
