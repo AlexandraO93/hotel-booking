@@ -1,0 +1,132 @@
+.breakfast-page {
+    background-color: #324645;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    overflow-x: hidden;
+}
+
+.breakfast-img {
+    width: 100vw;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.hero-section-breakfast {
+    width: 90%;
+    max-width: 800px;
+    z-index: 2;
+    margin-top: clamp(-12rem, -16vw, -13rem);
+    text-align: center;
+    color: white;
+}
+
+.headline-breakfast {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-family: 'Cooper Black', serif;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.subtitle-breakfast {
+    margin-top: clamp(2.5rem, 5vh, 5rem);
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    background: transparent ;
+    backdrop-filter: none ;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+}
+
+.subtext-breakfast {
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
+    font-family: serif;
+    font-weight: 600;
+    color: white;
+    margin-top: 0.2rem;
+    margin-bottom: 2px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.left-line, .right-line {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    height: 4px;
+    width: 70vw;
+}
+
+.describing-breakfast, .describing-text-two {
+    font-size: clamp(0.7rem, 3vw, 1.5rem);
+    max-width: 600px;
+}
+
+.schedule-title {
+    font-weight: bold;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.breakfast-times .workday, .breakfast-times .weekend {
+    margin-top: -0.9rem;
+    font-size: clamp(0.5rem, 2vw, 1.5rem);;
+}
+
+@media (min-width: 768px) {
+    .subtitle-breakfast {
+        grid-template-columns: 1fr max-content 1fr;
+    }
+    
+    .left-line, .right-line {
+        margin-top: 6px;
+        width: 100%;
+        height: 7px; 
+    }
+
+    .subtext-breakfast {
+        font-size: clamp(1.3rem, 2vw, 1.7rem);
+    }
+
+    .describing-breakfast, .describing-text-two {
+        font-size: clamp(0.7rem, 2.5vw, 1.5rem);
+        max-width: 900px;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .describing-breakfast, .describing-text {
+        margin-top: -1.5rem;
+        font-size: clamp(0.6rem, 1.8vw, 1.5rem);
+    }
+
+    .describing-breakfast, .describing-text-two {
+        margin-top: 1rem;
+        font-size: clamp(0.6rem, 1.8vw, 1.5rem);
+    }
+
+    .left-line, .right-line {
+        border-top: 2px solid rgba(255, 255, 255, 0.4);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .breakfast-times {
+        font-size: clamp(0.6rem, 1.5vw, 1.2rem);
+    }
+}
+
+@media (min-width: 1440px) {
+    .hero-section-breakfast {
+        margin-top: clamp(-14rem, -15vw, -18rem);
+    }
+}
