@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     padding-top:(var(--header-height));
-    padding-bottom: (var(--footer-height));
+    padding-bottom: calc(var(--footer-height) + 4rem);
     min-height: 100vh;
 }
 

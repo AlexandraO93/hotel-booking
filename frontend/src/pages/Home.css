@@ -6,7 +6,7 @@
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding-bottom: calc(var(--footer-height) + 1rem);
+  padding-bottom: calc(var(--footer-height) + 3rem);
 }
 
 .hero-bg-img {

@@ -4,6 +4,7 @@
     min-width: 320px;
     min-height: 100vh;
     overflow-x: hidden;
+    padding-bottom: calc(var(--footer-height) + 1rem);
 }
 
 .about-us-page main {
