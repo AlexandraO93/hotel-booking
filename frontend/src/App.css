@@ -1,5 +1,8 @@
 /* #root is the React mount point – don't constrain it.
    Let the app-root and components handle their own layouts. */
+:root {
+  background-color: #324645;
+}
 
 .logo {
   height: 6em;

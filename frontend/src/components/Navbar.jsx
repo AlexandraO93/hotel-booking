@@ -9,6 +9,17 @@ import { Link } from "react-router-dom";
 
 function RoslagenNavBar() {
   const [expanded, setExpanded] = useState(false);
+  const [foodOpen, setFoodOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    setExpanded(false);
+    setFoodOpen(false);
+  };
+
+  const toggleFoodMobile = (e) => {
+    e.preventDefault();
+    setFoodOpen(!foodOpen);
+  };
 
   return (
     <Navbar 
@@ -21,9 +32,9 @@ function RoslagenNavBar() {
       <Container fluid>
         <Navbar.Brand 
           as={Link} 
-          to="/" 
+          to="/hotel-booking" 
           className="headline"
-          onClick={() => setExpanded(false)}
+          onClick={handleLinkClick}
         >
           <img 
             className="logo-small"
@@ -35,16 +46,34 @@ function RoslagenNavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           
-          <Nav className="me-auto navLinks gap-3">
-            <Nav.Link as={Link} to="/hotel-booking" onClick={() => setExpanded(false)}>Hem</Nav.Link>
-            <Nav.Link as={Link} to="/booking" onClick={() => setExpanded(false)}>Boka</Nav.Link>
-            <Nav.Link as={Link} to="/room" onClick={() => setExpanded(false)}>Rum</Nav.Link>
-            <Nav.Link as={Link} to="/food-drinks" onClick={() => setExpanded(false)}>Mat & Dryck</Nav.Link>
+          <Nav className="me-auto navLinks">
+            <Nav.Link as={Link} to="/hotel-booking" onClick={handleLinkClick}>Hem</Nav.Link>
+            <Nav.Link as={Link} to="/booking" onClick={handleLinkClick}>Boka</Nav.Link>
+            <Nav.Link as={Link} to="/room" onClick={handleLinkClick}>Rum</Nav.Link>
+
+            <div className={`food-dropdown-wrapper  ${foodOpen ? 'is-open' : ''}`}
+              onMouseEnter={() => window.innerWidth >= 768 && setFoodOpen(true)}
+              onMouseLeave={() => window.innerWidth >= 768 && setFoodOpen(false)}
+            >
+              <button 
+                className="nav-link-food-btn" 
+                onClick={toggleFoodMobile}
+              >
+                Mat & Dryck
+              <span className="dropdown-arrow"></span>
+              </button>
+
+              <div className="food-dropdown-menu">
+                <Nav.Link as={Link} to="/breakfast" onClick={handleLinkClick}>Frukost</Nav.Link>
+                <Nav.Link as={Link} to="/a-la-carte" onClick={handleLinkClick}>A La Carte</Nav.Link>
+                <Nav.Link as={Link} to="/kids-menu" onClick={handleLinkClick}>Barnmeny</Nav.Link>
+              </div>
+            </div>
           </Nav>
 
-          <Nav className="ms-auto navLinks gap-2">
-            <Nav.Link as={Link} to="/about-us" onClick={() => setExpanded(false)}>Om oss</Nav.Link>
-            <Nav.Link as={Link} to="/contact" onClick={() => setExpanded(false)}>Kontakt</Nav.Link>
+          <Nav className="ms-auto navLinks">
+            <Nav.Link as={Link} to="/about-us" onClick={handleLinkClick}>Om oss</Nav.Link>
+            <Nav.Link as={Link} to="/contact" onClick={handleLinkClick}>Kontakt</Nav.Link>
           </Nav>
 
         </Navbar.Collapse>
