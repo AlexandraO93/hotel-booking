@@ -8,7 +8,7 @@ export default function Room() {
     return (
         <div className="room-page-container">
             <header className="room-header">
-                <h1 className="room-headline">Våra Rum</h1>
+                <h2 className="room-headline">Våra Rum</h2>
                 <p className="room-subtext">Där modern arkitektur möter Roslagens orörda natur</p>
             </header>
 
@@ -16,16 +16,16 @@ export default function Room() {
                 <article className="room-card">
                     <img src={standardRoomImage} alt="Standardrum" className="room-card-image" />
                     <div className="room-card-content">
-                        <h2 className="description-title-room">Standardrum</h2>
+                        <h3 className="description-title-room">Standardrum</h3>
                         <p className="description-body-room">
                             Våra Standardrum är designade för att maximera din närvaro i nuet. Med väggar i natursten och 
                             varmt trä skapas en omfamnande atmosfär som kontrasterar vackert mot den vidsträckta utsikten 
                             över Roslagens vatten. <br /><br />Här vaknar du i en exklusiv dubbelsäng, vänd direkt mot soluppgången 
                             bakom de avlägsna bergen.
                         </p>
-                        <div className="amenities-list" style={{marginTop: '2rem'}}>
+                        <div className="amenities-list">
                             <p className="practical-info-title">I RUMMET INGÅR:</p>
-                            <ul className="practical-info-text" style={{listStyleType: 'none', padding: 0}}>
+                            <ul className="practical-info-text">
                                 <li>Panoramafönster med ostörd vy över sjön och tallskogen.</li>
                                 <li>Minimalistisk design med fokus på naturliga material som trä och sten.</li>
                                 <li>Dubbelsäng med premiumlakan för maximal vila.</li>
@@ -40,7 +40,7 @@ export default function Room() {
                 <article className="room-card">
                     <img src={superiorRoomImage} alt="Superiorrum" className="room-card-image" />
                     <div className="room-card-content">
-                        <h2 className="description-title-room">Superiorrum</h2>
+                        <h3 className="description-title-room">Superiorrum</h3>
                         <p className="description-body-room">
                             Våra Superiorrum är skapade för livsnjutaren som vill maximera sin vistelse. Med en yta 
                             på ca 24m² får du ett rum där ljuset flödar in genom de stora panoramafönstren och 
@@ -48,9 +48,9 @@ export default function Room() {
                             placerat så att du kan sjunka ner i det varma vattnet samtidigt som du blickar ut över fjorden 
                             och tallskogen.
                         </p>
-                        <div className="amenities-list" style={{marginTop: '2rem'}}>
+                        <div className="amenities-list">
                             <p className="practical-info-title">DETTA GÖR RUMMET SPECIELLT:</p>
-                            <ul className="practical-info-text" style={{listStyleType: 'none', padding: 0}}>
+                            <ul className="practical-info-text">
                                 <li>Fristående badkar med fri sikt över Roslagens natur.</li>
                                 <li>Rymlig lounge-del med designfåtöljer för maximal avkoppling.</li>
                                 <li>King size-säng med exklusiva linnesängkläder.</li>
@@ -65,16 +65,16 @@ export default function Room() {
                 <article className="room-card">
                     <img src={suiteRoomImage} alt="Svit" className="room-card-image" />
                     <div className="room-card-content">
-                        <h2 className="description-title-room">Svit</h2>    
+                        <h3 className="description-title-room">Svit</h3>    
                         <p className="description-body-room">
                             För dig som söker det extraordinära. Vår svit erbjuder en rymd och komfort utöver det vanliga, komplett 
                             med en sprakande öppen spis och ett fristående badkar för total avkoppling. <br /><br />Den stora glasväggen öppnar 
                             upp mot din privata terrass, där du kan njuta av kvällssolen i bekväma loungemöbler medan mörkret sänker 
                             sig över sjön.
                         </p>
-                        <div className="amenities-list" style={{marginTop: '2rem'}}>
+                        <div className="amenities-list">
                             <p className="practical-info-title">EXKLUSIVA DETALJER:</p>
-                            <ul className="practical-info-text" style={{listStyleType: 'none', padding: 0}}>
+                            <ul className="practical-info-text">
                                 <li>Öppen spis i vardagsrumsdelen för högsta mysfaktor.</li>
                                 <li>Fristående badkar med panoramavy över det turkosa vattnet.</li>
                                 <li>Privat terrass med solsängar och sömlös övergång till naturen.</li>
@@ -88,7 +88,7 @@ export default function Room() {
                 <article className="room-card">
                     <img src={familyRoomImage} alt="Familjerum" className="room-card-image" />
                     <div className="room-card-content">
-                        <h2 className="description-title-room">Familjerum</h2>
+                        <h3 className="description-title-room">Familjerum</h3>
                         <p className="description-body-room">
                             Våra Familjerum på ca 30 m² är skapade för familjen som inte vill kompromissa med stil eller naturkontakt. 
                             Här bor ni rymligt i en modern miljö där hela familjen får plats att umgås, inspirerat av den omgivande 
@@ -96,9 +96,9 @@ export default function Room() {
                             platsbyggd våningssäng som smälter in i den arkitektoniska helheten av sten och mörkt trä. En fantasifull 
                             sovalkov med ett tipi-tält och mjuka puffar bjuder in till lek och kreativitet för barnen.
                         </p>
-                        <div className="amenities-list" style={{marginTop: '2rem'}}>
+                        <div className="amenities-list">
                             <p className="practical-info-title">DETTA INGÅR FÖR FAMILJEN:</p>
-                            <ul className="practical-info-text" style={{listStyleType: 'none', padding: 0}}>
+                            <ul className="practical-info-text">
                                 <li>Fantasifull lek- och sovalkov för barnen.</li>
                                 <li>Flexibla sovplatser för upp till 4 personer utan att tumma på rymden.</li>
                                 <li>Inredning i tåliga och vackra naturmaterial som ek och skiffer.</li>

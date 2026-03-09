@@ -73,20 +73,13 @@
 }
 
 @media (min-width: 1024px) {
-    .about-us-text {
-    min-width: 875px;
-    font-size: clamp(1rem, 1vw, 1.5rem);
-    }
-}
-
-@media (min-width: 1024px) {
     .headline-about-us {
-        font-size: 4rem;
+        font-size: clamp(2rem, 2vw, 3rem);
     }
 
     .about-us-text {
-        min-width: 1300px;
-        font-size: 1.8rem;
+        max-width: 900px;
+        font-size: clamp(1rem, 1vw, 1.5rem);
     }
 }
 

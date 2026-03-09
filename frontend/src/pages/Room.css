@@ -80,6 +80,7 @@
 .amenities-list {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 1rem;
+    margin-top: 2rem;
 }
 
 .practical-info-title {

@@ -24,11 +24,11 @@ export default function Contact() {
         </main>
     
     
-        <section className="contact-form">
+        <section className="contact-form-section">
             <form className="">
                 <h4 className="form-title">Kontaktformulär</h4>
                 <label htmlFor="nameInput">Namn *</label>
-                <input type="text" placeholder="Skriv ditt namn" id="nameInput"/>
+                <input type="text" required placeholder="Skriv ditt namn" id="nameInput" />
                 
                 <label htmlFor="bookingnumber">Bokningsnummer </label>
                 <input type="text" placeholder="Lämna tomt om du ej har bok.nr" id="bookingnumber" />
@@ -37,13 +37,13 @@ export default function Contact() {
                 <input type="text" placeholder="+46-7x xxx xx xx" id="phonenumber" />
 
                 <label htmlFor="email">Email *</label>
-                <input type="email" placeholder="example@hotmail.com" id="email" />
+                <input type="email" required placeholder="example@hotmail.com" id="email" />
 
                 <label htmlFor="verifyEmail">Verifiera Email *</label>
-                <input type="email" placeholder="example@hotmail.com" id="verifyEmail" />
+                <input type="email" required placeholder="example@hotmail.com" id="verifyEmail" />
 
                 <label htmlFor="message">Meddelande *</label>
-                <input type="text" placeholder="Skriv ditt meddelande här:" id="message" />
+                <textarea id="message" required placeholder="Skriv ditt meddelande här.."/>
                 <p className="forced-input">* Måste fyllas i</p>
                 <button type="submit" id="contact-btn">Skicka</button>
                 </form>

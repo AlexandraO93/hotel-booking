@@ -1,7 +1,6 @@
 .contact-page {
     position: relative;
     width: 100%;
-    padding-top:(var(--header-height));
     padding-bottom: calc(var(--footer-height) + 4rem);
     min-height: 100vh;
 }
@@ -55,7 +54,7 @@
     box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.3);
 }
 
-section {
+.contact-form-section {
     position: relative;
     z-index: 3;
     margin-top: 2rem;
@@ -95,7 +94,7 @@ form label {
     text-align: left;    
 }
 
-form input {
+form input, #message {
     font-size: clamp(0.7rem, 2vw, 2.5rem);
     display: block;
     width: 80%;

@@ -1,4 +1,3 @@
-import RoslagenNavBar from "../components/Navbar";
 import hotelImage from "../assets/hotel.png";
 import "./Home.css";
 import BookingBar from "../components/BookingBar";
