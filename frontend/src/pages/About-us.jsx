@@ -38,7 +38,7 @@ export default function AboutUs() {
                             och Joel idag. Att få erbjuda en paus från allt, mitt i naturen, med både lugn och 
                             ett leende nära till hands.</p>
                         <p className="facts">Fakta</p>
-                        <p className="facts-details">122 rum, varav 4 sviter, 45 minisviter. 250 bäddar. <br />8 mötesrum där det största tar 324 sittande.</p>
+                        <p className="facts-details">122 rum, varav 4 sviter, 45 superiorrum. 250 bäddar. <br />5 mötesrum där det största tar 250 sittande.</p>
                     </article>
                 </div>
             </main>

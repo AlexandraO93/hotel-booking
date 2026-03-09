@@ -25,17 +25,24 @@ const BookingBar = () => {
     setChildAges(newAges);
   };
 
+  const today = new Date().toISOString().split('T')[0];
+
+  const maxDate = new Date();
+  maxDate.setFullYear(maxDate.getFullYear() +1);
+  maxDate.setMonth(maxDate.getMonth() + 6);
+  const maxBookingDate = maxDate.toISOString().split("T")[0];
+
   return (
     <section className="booking-container">
       <div className="booking-grid">
         {/* RAD 1 */}
         <article className="booking-field-date">
           <label>CHECKA IN</label>
-          <input type="date" defaultValue="2026-02-28" />
+          <input type="date"  min={today} defaultValue={today} />
         </article>
         <article className="booking-field-date">
           <label>CHECKA UT</label>
-          <input type="date" defaultValue="2026-03-01" />
+          <input type="date" min={today} max={maxBookingDate} defaultValue={today}/>
         </article>
 
         {/* RAD 2 */}
