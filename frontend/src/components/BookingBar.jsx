@@ -1,11 +1,15 @@
-import React, { useState } from "react";
 import "./BookingBar.css";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const BookingBar = () => {
   const [rooms, setRooms] = useState(1);
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);
   const [childAges, setChildAges] = useState([]);
+  const today = new Date().toISOString().split("T")[0];
+  const [checkInDate, setCheckInDate] = useState(today);
+  const [checkOutDate, setCheckOutDate] = useState(today);
 
   const handleChildrenChange = (newCount) => {
     const count = Math.max(0, newCount);
@@ -25,12 +29,43 @@ const BookingBar = () => {
     setChildAges(newAges);
   };
 
-  const today = new Date().toISOString().split('T')[0];
 
   const maxDate = new Date();
-  maxDate.setFullYear(maxDate.getFullYear() +1);
+  maxDate.setFullYear(maxDate.getFullYear() + 1);
   maxDate.setMonth(maxDate.getMonth() + 6);
   const maxBookingDate = maxDate.toISOString().split("T")[0];
+
+  const navigate = useNavigate();
+
+  function handleSearch () {
+    if (checkOutDate < checkInDate) {
+      alert("Check-out datum kan inte vara före check-in datum")
+      return
+    }
+
+    if(adults <= 0) {
+      alert("Antalet vuxna får ej vara 0")
+      return
+    }
+
+    if(children > 0 && childAges.some(age => age === "")) {
+      alert("Ålder på barn måste väljas")
+      return
+    }
+
+    const searchData = {
+      checkInDate,
+      checkOutDate,
+      rooms,
+      guests: (adults + children),
+      adults,
+      children,
+      childAges};
+
+    localStorage.setItem('savedSearch', JSON.stringify(searchData));
+
+    navigate("/booking");
+  }
 
   return (
     <section className="booking-container">
@@ -38,20 +73,29 @@ const BookingBar = () => {
         {/* RAD 1 */}
         <article className="booking-field-date">
           <label>CHECKA IN</label>
-          <input type="date"  min={today} defaultValue={today} />
+          <input type="date" 
+          min={today} 
+          value={checkInDate} 
+          onChange={(e) => setCheckInDate(e.target.value)}/>
         </article>
         <article className="booking-field-date">
           <label>CHECKA UT</label>
-          <input type="date" min={today} max={maxBookingDate} defaultValue={today}/>
+          <input
+            type="date"
+            min={today}
+            max={maxBookingDate}
+            value={checkOutDate} 
+            onChange={(e) => setCheckOutDate(e.target.value)}
+          />
         </article>
 
         {/* RAD 2 */}
         <article className="booking-field-room">
           <label>RUM</label>
           <div className="counter-controls">
-            <button onClick={() => setRooms(Math.max(1, rooms - 1))}>−</button>
+            <button onClick={() => setRooms(Math.max(1, rooms - 1))} type="button">−</button>
             <span className="count-display">{rooms}</span>
-            <button onClick={() => setRooms(rooms + 1)}>+</button>
+            <button onClick={() => setRooms(rooms + 1)} type="button">+</button>
           </div>
         </article>
 
@@ -59,37 +103,50 @@ const BookingBar = () => {
         <article className="booking-field-adults">
           <label>VUXNA</label>
           <div className="counter-controls">
-            <button onClick={() => setAdults(Math.max(1, adults - 1))}>−</button>
+            <button onClick={() => setAdults(Math.max(1, adults - 1))} type="button">
+              −
+            </button>
             <span className="count-display">{adults}</span>
-            <button onClick={() => setAdults(adults + 1)}>+</button>
+            <button onClick={() => setAdults(adults + 1)} type="button">+</button>
           </div>
         </article>
         <article className="booking-field-children">
           <label>BARN</label>
           <div className="counter-controls">
-            <button onClick={() => handleChildrenChange(children - 1)}>−</button>
+            <button onClick={() => handleChildrenChange(children - 1)} type="button">
+              −
+            </button>
             <span className="count-display">{children}</span>
-            <button onClick={() => handleChildrenChange(children + 1)}>+</button>
+            <button onClick={() => handleChildrenChange(children + 1)} type="button">
+              +
+            </button>
           </div>
         </article>
 
         {/* RAD 4 */}
         <footer className="button-row">
-          <button type="submit" className="booking-submit">BOKA HOTELLRUM</button>
+          <button onClick={handleSearch} type="button" className="booking-submit">
+            BOKA HOTELLRUM
+          </button>
         </footer>
 
         {/* RAD 5 */}
         {children > 0 && (
           <article className="child-ages-section">
-            <p className="child-ages-text">Ange ålder på barnen vid incheckning:</p>
+            <p className="child-ages-text">
+              Ange ålder på barnen vid incheckning:
+            </p>
             <div className="age-inputs-grid">
-              {Array.from({ length: Number(children) }).map((_, index) => (
+              {Array.from({ length: (children) }).map((_, index) => (
                 <div className="age-input-field" key={index}>
                   <label>Barn {index + 1}</label>
-                  <select>
+                  <select 
+                  value={childAges[index] || ""}
+                  onChange={(e) => updateChildAge(index, e.target.value)}
+                  >
                     <option value="">Välj ålder</option>
                     {Array.from({ length: 13 }).map((_, age) => (
-                      <option key={age} value={age + 1}>
+                      <option key={age} value={age}>
                         {age} år
                       </option>
                     ))}
@@ -98,8 +155,8 @@ const BookingBar = () => {
               ))}
             </div>
           </article>
-          )}
-        </div>
+        )}
+      </div>
     </section>
   );
 };

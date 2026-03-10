@@ -17,5 +17,6 @@
             "username": "root"
         }
     ],
-    "maven.view": "flat"
+    "maven.view": "flat",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

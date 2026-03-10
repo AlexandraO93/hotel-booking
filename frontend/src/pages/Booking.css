@@ -1,0 +1,93 @@
+.booking-page-container {
+  background-color: #324645;
+  color: white;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: calc(var(--footer-height) + 1rem);
+}
+
+.booking-header {
+  text-align: center;
+}
+
+.booking-headline {
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-family: "Cooper Black", serif;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.search-info-bar {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 80%;
+  padding: 0.5rem;
+  background-color: #AB9969;
+  box-shadow: 4px 3px 2px rgba(0, 0, 0, 0.5);
+}
+
+.search-info-headline {
+  font-size: clamp(0.9rem, 1.5vw, 1.5rem);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  width: 90%;
+  padding-bottom: 0.5rem;
+  grid-column: 1 / -1;
+  text-align: center;
+  align-self: center;
+}
+
+.search-summary-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  font-size: clamp(0.6rem, 1vw, 1.125rem);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.search-dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.update-booking-btn {
+    grid-column: 1 / -1;
+    padding: 0.15rem 0;
+    background-color: transparent;
+    color: white;
+    font-size: clamp(0.6rem, 1vw, 1.125rem);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 2px;
+    padding-top: 0;
+}
+
+.search-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-info-content {
+  padding-left: 0.3rem;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0.8rem;
+}
+
+.search-info-title {
+  margin-bottom: 0;
+}
+
+.search-info-subtext {
+  padding-right: 0.3rem;
+  margin-bottom: 0;
+}
