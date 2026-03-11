@@ -1,10 +1,59 @@
 import "./Room.css";
 import standardRoomImage from "../assets/standard-room.png";
+import standardRoomImageSmall from "../assets/standard-room-compressed.png";
 import superiorRoomImage from "../assets/superior-room.png";
+import superiorRoomImageSmall from "../assets/superior-room-compressed.png";
 import suiteRoomImage from "../assets/suite-room.png";
+import suiteRoomImageSmall from "../assets/suite-room-compressed.png";
 import familyRoomImage from "../assets/family-room.png";
+import familyRoomImageSmall from "../assets/family-room-compressed.png";
+import { useState, useEffect } from "react";
 
 export default function Room() {
+  const [standardImage, setStandardImage] = useState(standardRoomImageSmall);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = standardRoomImage;
+
+    img.onload = () => {
+      setHeroImage(standardRoomImage);
+    };
+  }, []);
+
+  const [superiorImage, setSuperiorImage] = useState(superiorRoomImageSmall);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = superiorRoomImage;
+
+    img.onload = () => {
+      setHeroImage(superiorRoomImage);
+    };
+  }, []);
+
+  const [suiteImage, setSuiteImage] = useState(suiteRoomImageSmall);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = suiteRoomImage;
+
+    img.onload = () => {
+      setHeroImage(suiteRoomImage);
+    };
+  }, []);
+
+  const [familyImage, setFamilyImage] = useState(familyRoomImageSmall);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = familyRoomImage;
+
+    img.onload = () => {
+      setHeroImage(familyRoomImage);
+    };
+  }, []);
+
   return (
     <div className="room-page-container">
       <header className="room-header">
@@ -17,7 +66,7 @@ export default function Room() {
       <section className="room-grid">
         <article className="room-card">
           <img
-            src={standardRoomImage}
+            src={standardImage}
             alt="Standardrum"
             className="room-card-image"
           />
@@ -51,7 +100,7 @@ export default function Room() {
 
         <article className="room-card">
           <img
-            src={superiorRoomImage}
+            src={superiorImage}
             alt="Superiorrum"
             className="room-card-image"
           />
@@ -92,7 +141,7 @@ export default function Room() {
         </article>
 
         <article className="room-card">
-          <img src={suiteRoomImage} alt="Svit" className="room-card-image" />
+          <img src={suiteImage} alt="Svit" className="room-card-image" />
           <div className="room-card-content">
             <h3 className="description-title-room">Svit</h3>
             <p className="description-body-room">
@@ -125,11 +174,7 @@ export default function Room() {
         </article>
 
         <article className="room-card">
-          <img
-            src={familyRoomImage}
-            alt="Familjerum"
-            className="room-card-image"
-          />
+          <img src={familyImage} alt="Familjerum" className="room-card-image" />
           <div className="room-card-content">
             <h3 className="description-title-room">Familjerum</h3>
             <p className="description-body-room">

@@ -1,57 +1,98 @@
 import contactImage from "../assets/contact.png";
+import contactImageSmall from "../assets/contact-compressed.png";
+import { useState, useEffect } from "react";
 import "./Contact.css";
 import { Link } from "react-router-dom";
 
 export default function Contact() {
-    return (
-        <div className="contact-page">
+  const [heroImage, setHeroImage] = useState(contactImageSmall);
 
-            <div
-            className="contact-img"
-            style={{
-                backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${contactImage})`,
-            }}
-        ></div>
+  useEffect(() => {
+    const img = new Image();
+    img.src = contactImage;
 
-        <main>
-            <div className="hero-section">
-                <h2 className="contact-title">Kontakta oss</h2>
-                <p className="contact-subtitle">
-                    Innan du hör av dig, kolla igenom våra mest frågade Frågor & Svar för att få snabbare svar på dina frågor
-                </p>
-                <Link id="qa" to="/qa">Läs Frågor & Svar här</Link>
-            </div>
-        </main>
-    
-    
-        <section className="contact-form-section">
-            <form className="">
-                <h4 className="form-title">Kontaktformulär</h4>
-                <label htmlFor="nameInput">Namn *</label>
-                <input type="text" required placeholder="Skriv ditt namn" id="nameInput" />
-                
-                <label htmlFor="bookingnumber">Bokningsnummer </label>
-                <input type="text" placeholder="Lämna tomt om du ej har bok.nr" id="bookingnumber" />
+    img.onload = () => {
+      setHeroImage(contactImage);
+    };
+  }, []);
 
-                <label htmlFor="phonenumber">Telefonnummer </label>
-                <input type="text" placeholder="+46-7x xxx xx xx" id="phonenumber" />
+  return (
+    <div className="contact-page">
+      <div
+        className="contact-img"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${heroImage})`,
+        }}
+      ></div>
 
-                <label htmlFor="email">Email *</label>
-                <input type="email" required placeholder="example@hotmail.com" id="email" />
-
-                <label htmlFor="verifyEmail">Verifiera Email *</label>
-                <input type="email" required placeholder="example@hotmail.com" id="verifyEmail" />
-
-                <label htmlFor="message">Meddelande *</label>
-                <textarea id="message" required placeholder="Skriv ditt meddelande här.."/>
-                <p className="forced-input">* Måste fyllas i</p>
-                <button type="submit" id="contact-btn">Skicka</button>
-                </form>
-        </section>
-
-        <div className="filler-space">
-            <p className="ending-slogan">Roslagen Escape är ett kontantfritt hotell. Snabbt, säkert och enkelt.</p>
+      <main>
+        <div className="hero-section">
+          <h2 className="contact-title">Kontakta oss</h2>
+          <p className="contact-subtitle">
+            Innan du hör av dig, kolla igenom våra mest frågade Frågor & Svar
+            för att få snabbare svar på dina frågor
+          </p>
+          <Link id="qa" to="/qa">
+            Läs Frågor & Svar här
+          </Link>
         </div>
+      </main>
+
+      <section className="contact-form-section">
+        <form className="">
+          <h4 className="form-title">Kontaktformulär</h4>
+          <label htmlFor="nameInput">Namn *</label>
+          <input
+            type="text"
+            required
+            placeholder="Skriv ditt namn"
+            id="nameInput"
+          />
+
+          <label htmlFor="bookingnumber">Bokningsnummer </label>
+          <input
+            type="text"
+            placeholder="Lämna tomt om du ej har bok.nr"
+            id="bookingnumber"
+          />
+
+          <label htmlFor="phonenumber">Telefonnummer </label>
+          <input type="text" placeholder="+46-7x xxx xx xx" id="phonenumber" />
+
+          <label htmlFor="email">Email *</label>
+          <input
+            type="email"
+            required
+            placeholder="example@hotmail.com"
+            id="email"
+          />
+
+          <label htmlFor="verifyEmail">Verifiera Email *</label>
+          <input
+            type="email"
+            required
+            placeholder="example@hotmail.com"
+            id="verifyEmail"
+          />
+
+          <label htmlFor="message">Meddelande *</label>
+          <textarea
+            id="message"
+            required
+            placeholder="Skriv ditt meddelande här.."
+          />
+          <p className="forced-input">* Måste fyllas i</p>
+          <button type="submit" id="contact-btn">
+            Skicka
+          </button>
+        </form>
+      </section>
+
+      <div className="filler-space">
+        <p className="ending-slogan">
+          Roslagen Escape är ett kontantfritt hotell. Snabbt, säkert och enkelt.
+        </p>
+      </div>
     </div>
-    );
+  );
 }
