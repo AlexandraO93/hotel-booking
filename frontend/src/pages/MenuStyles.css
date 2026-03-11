@@ -36,7 +36,7 @@
 
 /* --- RUBRIK MED LINJER (Samma för alla sidor) --- */
 .menu-divider-section {
-    margin-top: clamp(2rem, 5vh, 5rem);
+    margin-top: clamp(4rem, 5vh, 5rem);
     margin-bottom: 2rem;
     display: grid;
     grid-template-columns: 1fr;
@@ -65,7 +65,8 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     height: 4px;
-    width: 70vw;
+    width: clamp(120px, 80%, 400px);
+    justify-self: center;
 }
 
 /* --- BESKRIVANDE TEXT & INFO --- */
@@ -160,6 +161,15 @@
     color: rgba(255, 255, 255, 0.795); 
     max-width: 500px;
     margin: 0 auto;
+}
+
+.practical-info-included {
+    font-size: clamp(0.6rem, 2vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.795); 
+    max-width: 500px;
+    margin-top: 0.2rem;
 }
 
 .scroll-prompt {

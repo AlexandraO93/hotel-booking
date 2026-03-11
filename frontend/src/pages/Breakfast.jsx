@@ -33,6 +33,7 @@ export default function Breakfast() {
                         <p className="practical-info-title">Frukosttider</p>
                         <p className="practical-info-text">Måndag - Fredag 06:30 - 10:30</p>
                         <p className="practical-info-text">Lördag - Söndag 07:30 - 10:30</p>
+                        <p className="practical-info-included">Frukost ingår i alla rumstyper</p>
                     </div>
                 </article>   
             </main>
