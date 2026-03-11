@@ -1,5 +1,5 @@
 :root {
-  --header-height: clamp(60px,10vh,80px);
+  --header-height: clamp(60px, 10vh, 80px);
 
   --nav-bg: #405958;
   --link-bg-dropdown: #395252;
@@ -26,7 +26,7 @@
 }
 
 .navBar .logo-small {
-  height: calc(var(--header-height) * 0.60);
+  height: calc(var(--header-height) * 0.6);
   max-height: 55px;
   width: auto;
 }
@@ -36,7 +36,7 @@
   position: absolute;
   top: var(--header-height);
   right: clamp(0.5rem, 3vw, 3rem);
-  left:auto;
+  left: auto;
   width: clamp(200px, 60vw, 300px);
   background: var(--link-bg-dropdown);
   margin-top: -0.1rem;
@@ -48,7 +48,9 @@
   opacity: 0;
   overflow: hidden;
   overflow-y: auto;
-  transition: max-height 100ms ease, opacity 100ms ease;
+  transition:
+    max-height 100ms ease,
+    opacity 100ms ease;
   z-index: 1300;
 }
 
@@ -63,14 +65,14 @@
   width: 100%;
   font-size: clamp(0.7rem, 1.2vw, 0.9rem);
   padding: 0.5rem 0.7rem;
-  margin: 0;                 
+  margin: 0;
   border-radius: 0;
   color: var(--link-text-color);
   text-decoration: none;
 }
 
 .navBar .navLinks .nav-link {
-  border-bottom: 2px solid var(--border-color); 
+  border-bottom: 2px solid var(--border-color);
 }
 
 .navBar .navLinks .nav-link:hover {
@@ -94,13 +96,13 @@
   width: 100%;
   background: none;
   border: none;
-  text-align: left; 
-  padding: 0.5rem 0.7rem; 
-  font-size: clamp(0.7rem, 1.2vw, 0.9rem); 
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
   color: var(--link-text-color);
   letter-spacing: 0.05em;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   font-weight: 400;
 }
@@ -123,7 +125,8 @@
 }
 
 .dropdown-arrow {
-  width: 0; height: 0; 
+  width: 0;
+  height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid white;
@@ -134,14 +137,14 @@
   transform: rotate(180deg);
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .navBar {
     height: var(--header-height);
     padding: 0 clamp(1rem, 2vw, 2rem) !important;
   }
 
   .navBar .logo-small {
-    height: calc(var(--header-height) * 0.60);
+    height: calc(var(--header-height) * 0.6);
   }
 
   .navBar-toggler {
@@ -172,7 +175,7 @@
     width: auto;
     gap: 0.2rem;
     margin: 0 !important;
-    padding: 0 !important; 
+    padding: 0 !important;
   }
 
   .navBar .navLinks .nav-link,
@@ -184,13 +187,13 @@
     background: transparent;
     border: none;
 
-    font-size: clamp(0.75rem, 1vw, 2.5rem); 
+    font-size: clamp(0.75rem, 1vw, 2.5rem);
     color: var(--link-text-color);
-    text-transform: uppercase; 
+    text-transform: uppercase;
     letter-spacing: 0.05rem;
     font-weight: 500;
     font-family: sans-serif;
-    
+
     border-radius: 0.25rem;
     transition: background-color 0.3s ease;
     display: inline-block;
@@ -215,24 +218,24 @@
   }
 
   .food-dropdown-menu {
-    display: none; 
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     min-width: 12rem;
     background-color: var(--nav-bg);
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
     padding: 0.1rem 0;
     margin-top: clamp(0.5rem, 1.2vh, 1.5rem);
     border: 1px solid var(--border-color);
     border-radius: 4px;
-    z-index: 1000;    
+    z-index: 1000;
   }
 
   .nav-link-food-btn::after {
     content: "";
     position: absolute;
-    bottom: -2rem; 
+    bottom: -2rem;
     left: 0;
     width: 100%;
     height: 2rem;
@@ -241,7 +244,7 @@
   }
 
   .food-dropdown-wrapper:hover .nav-link-food-btn::after {
-    display: block; 
+    display: block;
   }
 
   .food-dropdown-wrapper.is-open .food-dropdown-menu {
@@ -260,17 +263,16 @@
   .food-dropdown-menu .nav-link:last-child {
     border-bottom: none !important;
   }
-    
+
   .dropdown-arrow {
     display: none;
   }
 }
 
-
-@media (min-width:2560px) {
+@media (min-width: 2560px) {
   .navBar .navLinks .nav-link,
   .nav-link-food-btn {
     padding: 0.5rem 1.5rem !important;
-    font-size: clamp(0.4rem, 0.7vw, 2rem); 
+    font-size: clamp(0.4rem, 0.7vw, 2rem);
   }
 }

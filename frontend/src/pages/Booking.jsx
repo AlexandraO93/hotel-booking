@@ -75,6 +75,10 @@ export default function Booking() {
     setShowAddons(true);
   }
 
+  function handleUpdateRoom() {
+    setShowAddons(false)
+  }
+
   function handleContinueToCheckout() {
     localStorage.setItem("selectedRoom", JSON.stringify(selectedRoom));
     localStorage.setItem(
@@ -175,7 +179,7 @@ export default function Booking() {
                           checked={dinnerIncluded === true}
                           onChange={() => setDinnerIncluded(true)}
                         />
-                        Ja
+                         Ja
                       </label>
 
                       <label className="addon-option">
@@ -185,17 +189,25 @@ export default function Booking() {
                           checked={dinnerIncluded === false}
                           onChange={() => setDinnerIncluded(false)}
                         />
-                        Nej
+                         Nej
                       </label>
                       </div>
-
-                      <button
-                        type="button"
-                        className="continue-booking-btn"
-                        onClick={handleContinueToCheckout}
-                      >
-                        Fortsätt till checkout
-                      </button>
+                      <div className="room-btns">
+                        <button
+                          type="button"
+                          className="continue-booking-btn"
+                          onClick={handleContinueToCheckout}
+                        >
+                          Fortsätt till checkout
+                        </button>
+                        <button
+                          type="button"
+                          className="continue-booking-btn"
+                          onClick={handleUpdateRoom}
+                        >
+                          Ändra rum
+                        </button>
+                      </div>
                     </div>
                   ) : (
                     <>

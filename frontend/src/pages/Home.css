@@ -30,27 +30,27 @@
   color: white;
   width: 100%;
   max-width: 1200px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .hero-title {
   font-size: clamp(1.3rem, 6vw, 3.3rem);
   font-weight: 700;
   margin-bottom: clamp(0.5rem, 2vh, 1.5rem);
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   line-height: 1.2;
   z-index: 2;
 }
 
 .hero-subtitle {
-  font-size: clamp(0.7rem, 2.5vw,1.3rem);
+  font-size: clamp(0.7rem, 2.5vw, 1.3rem);
   max-width: clamp(300px, 80vw, 800px);
   margin-bottom: 2rem;
   line-height: 1.5;
   z-index: 2;
 }
 
-@media (min-width:321px) and (max-width:374px) {
+@media (min-width: 321px) and (max-width: 374px) {
   .hero-title {
     font-size: 1.3rem;
   }
@@ -60,10 +60,10 @@
   }
 }
 
-@media (min-width:375px) and (max-width:424px) {
+@media (min-width: 375px) and (max-width: 424px) {
   .hero-title {
     font-size: 1.6rem;
-    margin-top: 1rem;;
+    margin-top: 1rem;
   }
 
   .hero-subtitle {
@@ -71,14 +71,14 @@
   }
 }
 
-@media (min-width:425px) and (max-width:767px) {
+@media (min-width: 425px) and (max-width: 767px) {
   .hero-bg-img {
     max-height: 715px;
   }
 
   .hero-title {
     font-size: 2.1rem;
-    margin-top: 1rem;;
+    margin-top: 1rem;
   }
 
   .hero-subtitle {
@@ -86,7 +86,7 @@
   }
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .hero-bg-img {
     max-height: 53rem;
   }
@@ -104,7 +104,7 @@
   }
 }
 
-@media (min-width:1024px) {
+@media (min-width: 1024px) {
   .hero-bg-img {
     max-height: 55rem;
   }

@@ -179,10 +179,16 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+.room-btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .continue-booking-btn {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  font-size: clamp(0.6rem, 1vw, 1.5rem);
+  font-size: clamp(0.55rem, 1vw, 1.5rem);
   box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.3);
   border-radius: 2px;
   background-color: #AB9969;
