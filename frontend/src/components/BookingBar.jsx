@@ -38,8 +38,8 @@ const BookingBar = () => {
   const navigate = useNavigate();
 
   function handleSearch () {
-    if (checkOutDate < checkInDate) {
-      alert("Check-out datum kan inte vara före check-in datum")
+    if (checkOutDate < checkInDate || checkInDate === checkOutDate) {
+      alert("Check-out datum kan inte vara före/eller samma som check-in datum")
       return
     }
 
