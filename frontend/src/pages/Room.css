@@ -1,173 +1,174 @@
 .room-page-container {
-    background-color: #324645;
-    color: white;
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: calc(var(--footer-height) + 1rem);
+  background-color: #324645;
+  color: white;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: calc(var(--footer-height) + 1rem);
 }
 
 .room-header {
-    text-align: center;
+  text-align: center;
 }
 
 .room-headline {
-    font-size: clamp(1.5rem, 2vw, 2.5rem);
-    font-family: 'Cooper Black', serif;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-family: "Cooper Black", serif;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .room-subtext {
-    font-size: clamp(0.8rem, 1vw, 1.5rem);
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .room-grid {
-    padding-top: 0;
-    margin-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-    max-width: 900px;
-    background: transparent ;
-    backdrop-filter: none ;
-    -webkit-backdrop-filter: none;
-    border: none;
-    box-shadow: none;
+  padding-top: 0;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
 }
 
 .room-card {
-    background: rgba(255, 255, 255, 0.03); 
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    overflow: hidden; 
-    transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
 .room-card:hover {
-    border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .room-card-image {
-    width: 100%;
-    height: clamp(200px, 40vh, 450px);
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: clamp(200px, 40vh, 450px);
+  object-fit: cover;
+  display: block;
 }
 
 .room-card-content {
-    padding: clamp(0.8rem, 2vw, 1.5rem);
-    text-align: left;
+  padding: clamp(0.8rem, 2vw, 1.5rem);
+  text-align: left;
 }
 
 .description-title-room {
-    font-family: 'Cooper Black', serif;
-    font-size: clamp(0.8rem, 2vw, 2.2rem);
-    color: #fff;
+  font-family: "Cooper Black", serif;
+  font-size: clamp(0.8rem, 2vw, 2.2rem);
+  color: #fff;
 }
 
 .description-body-room {
-    font-size: clamp(0.7rem, 1vw, 1.5rem);
-    line-height: 1.2;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: -1rem;
+  font-size: clamp(0.7rem, 1vw, 1.5rem);
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: -1rem;
 }
 
 .amenities-list {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  margin-top: 2rem;
 }
 
 .practical-info-title {
-    font-weight: 700;
-    font-size: clamp(0.7rem, 1vw, 1.5rem);
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+  font-size: clamp(0.7rem, 1vw, 1.5rem);
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .practical-info-text {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
 }
 
 .practical-info-text li {
-    font-size: clamp(0.7rem, 1vw, 1.5rem);
-    margin-bottom: 0.3rem;
-    padding-left: 1.2rem;
-    position: relative;
+  font-size: clamp(0.7rem, 1vw, 1.5rem);
+  margin-bottom: 0.3rem;
+  padding-left: 1.2rem;
+  position: relative;
 }
 
 .practical-info-text li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: rgba(255, 255, 255, 0.4);
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .size-info {
-    font-style: italic;
-    font-size: clamp(0.7rem, 1vw, 1.5rem);
-    color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  font-size: clamp(0.7rem, 1vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 @media (min-width: 768px) {
-    .practical-info-title {
-        font-size: clamp(0.4rem, 0.4vw, 0.4rem);
-    }
+  .practical-info-title {
+    font-size: clamp(0.4rem, 0.4vw, 0.4rem);
+  }
 }
 
 @media (min-width: 1024px) {
-    .room-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        max-width: 1200px; 
-        gap: 2.5rem;
-    }
+  .room-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1200px;
+    gap: 2.5rem;
+  }
 
-    .room-card {
-        display: flex;
-        flex-direction: column;
-        height: 100%; 
-    }
+  .room-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
-    .room-card-image {
-        height: 300px; 
-    }
+  .room-card-image {
+    height: 300px;
+  }
 
-    .room-card-content {
-        flex-grow: 1; 
-        display: flex;
-        flex-direction: column;
-    }
+  .room-card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
 
-    .description-title-room {
-        font-size: clamp(1.3rem, 2vw, 2.2rem); 
-    }
+  .description-title-room {
+    font-size: clamp(1.3rem, 2vw, 2.2rem);
+  }
 
-    .description-body-room {
-        font-size: clamp(1rem, 1vw, 1.15rem);
-        line-height: 1.2;
-    }
+  .description-body-room {
+    font-size: clamp(1rem, 1vw, 1.15rem);
+    line-height: 1.2;
+  }
 
-    .practical-info-title {
-        font-size: clamp(0.6rem, 0.6vw, 0.9rem);
-    }
+  .practical-info-title {
+    font-size: clamp(0.6rem, 0.6vw, 0.9rem);
+  }
 
-    .practical-info-text li {
-        font-size: clamp(0.7rem, 1vw, 1.05rem);
-        margin-bottom: 0.5rem;
-    }
+  .practical-info-text li {
+    font-size: clamp(0.7rem, 1vw, 1.05rem);
+    margin-bottom: 0.5rem;
+  }
 
-    .size-info {
-        font-size: clamp(0.8rem, 0.9vw, 1rem);
-        margin-top: auto; 
-        padding-top: 1rem;
-    }
+  .size-info {
+    font-size: clamp(0.8rem, 0.9vw, 1rem);
+    margin-top: auto;
+    padding-top: 1rem;
+  }
 }
