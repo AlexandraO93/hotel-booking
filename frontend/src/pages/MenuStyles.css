@@ -1,246 +1,247 @@
 /* --- BASSTRUKTUR FÖR ALLA MATSIDOR --- */
 .menu-page-container {
-    background-color: #324645;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: calc(var(--footer-height) + 2rem);
-    overflow-x: hidden;
-    color: white;
+  background-color: #324645;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: calc(var(--footer-height) + 2rem);
+  overflow-x: hidden;
+  color: white;
 }
 
 /* --- HERO & BILDER --- */
 .menu-hero-img {
-    width: 100vw;
-    height: 40vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
+  width: 100vw;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
 }
 
 .menu-hero-content {
-    width: 90%;
-    max-width: 800px;
-    z-index: 2;
-    margin-top: clamp(-18rem, -15vw, -11rem);
-    text-align: center;
+  width: 90%;
+  max-width: 800px;
+  z-index: 2;
+  margin-top: clamp(-18rem, -15vw, -11rem);
+  text-align: center;
 }
 
 .menu-main-headline {
-    font-size: clamp(2.2rem, 6vw, 4rem);
-    font-family: 'Cooper Black', serif;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-family: "Cooper Black", serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* --- RUBRIK MED LINJER (Samma för alla sidor) --- */
 .menu-divider-section {
-    margin-top: clamp(4rem, 5vh, 5rem);
-    margin-bottom: 2rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    gap: clamp(0.5rem, 2vw, 1.5rem);
-    width: 100%;
-    max-width: 900px;
-    background: transparent ;
-    backdrop-filter: none ;
-    -webkit-backdrop-filter: none;
-    border: none;
-    box-shadow: none;
+  margin-top: clamp(4rem, 5vh, 5rem);
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+  width: 100%;
+  max-width: 900px;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
 }
 
 .menu-subtext {
-    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-    font-family: serif;
-    font-weight: 600;
-    margin: 0rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    white-space: nowrap;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-family: serif;
+  font-weight: 600;
+  margin: 0rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
 }
 
 .line {
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    height: 4px;
-    width: clamp(120px, 80%, 400px);
-    justify-self: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  height: 4px;
+  width: clamp(120px, 80%, 400px);
+  justify-self: center;
 }
 
 /* --- BESKRIVANDE TEXT & INFO --- */
 .menu-description-article {
-    max-width: 850px;
-    text-align: center;
-    margin-bottom: clamp(2rem, 8vh, 5rem);
-    padding: 0 clamp(1rem, 5vw, 3rem);
+  max-width: 850px;
+  text-align: center;
+  margin-bottom: clamp(2rem, 8vh, 5rem);
+  padding: 0 clamp(1rem, 5vw, 3rem);
 }
 
 .description-title {
-    font-weight: 600;
-    font-size: clamp(0.8rem, 2.5vw, 1.6rem);
-    margin-bottom: 0.6rem;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 2.5vw, 1.6rem);
+  margin-bottom: 0.6rem;
 }
 
 .description-body {
-    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 /* --- SJÄLVA MENYN --- */
 .menu-items-container {
-    text-align: left;
-    max-width: 750px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    background: transparent ;
-    backdrop-filter: none ;
-    -webkit-backdrop-filter: none;
-    border: none;
-    box-shadow: none;
+  text-align: left;
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
 }
 
 .category-headline {
-    font-family: 'Cooper Black', serif;
-    font-size: clamp(1rem, 2vw, 1.8rem);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding-bottom: 0.5rem;
-    margin: 3rem 0 1rem 0;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  font-family: "Cooper Black", serif;
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+  margin: 3rem 0 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.dish-name, .dish-price {
-    font-weight: 500;
-    font-size: clamp(0.8rem, 1.2vw, 1.2rem);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+.dish-name,
+.dish-price {
+  font-weight: 500;
+  font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .dish-price {
-    margin-left: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .dish-ingredients {
-    font-size: clamp(0.7rem, 1.3vw, 1.1rem);
-    margin: 0.2rem 0;
-    color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.7rem, 1.3vw, 1.1rem);
+  margin: 0.2rem 0;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .dish-wine-pairing {
-    font-style: italic;
-    font-size: clamp(0.85rem, 1.2vw, 1rem);
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 1.5rem;
+  font-style: italic;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
 }
 
 /* --- PRAKTISK INFO (Mindre och diskret) --- */
 .practical-info-box {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); 
-    text-align: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
 }
 
 .practical-info-title {
-    font-size: clamp(0.7rem, 2.5vw, 1.5rem);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-    color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(0.7rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .practical-info-text {
-    font-size: clamp(0.5rem, 2vw, 1.5rem);
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.795); 
-    max-width: 500px;
-    margin: 0 auto;
+  font-size: clamp(0.5rem, 2vw, 1.5rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.795);
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .practical-info-included {
-    font-size: clamp(0.6rem, 2vw, 1.5rem);
-    font-weight: 500;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.795); 
-    max-width: 500px;
-    margin-top: 0.2rem;
+  font-size: clamp(0.6rem, 2vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.795);
+  max-width: 500px;
+  margin-top: 0.2rem;
 }
 
 .scroll-prompt {
-    font-size: clamp(0.6rem, 2vw, 1.5rem);
-    font-style: italic;
-    margin-top: 0.5rem;
-    color: rgba(255, 255, 255, 0.767);
+  font-size: clamp(0.6rem, 2vw, 1.5rem);
+  font-style: italic;
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.767);
 }
 
 @media (min-width: 768px) {
-    .menu-divider-section {
-        display: grid;
-        grid-template-columns: 1fr max-content 1fr;
-        align-items: center;
-        gap: 1rem;
-    }
+  .menu-divider-section {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
 
-    .line {
-        width: 100%;
-        height: clamp(0.5rem, 1vw, 0.6rem);
-    }
+  .line {
+    width: 100%;
+    height: clamp(0.5rem, 1vw, 0.6rem);
+  }
 
-    .menu-main-headline {
-        margin-top: -2rem;
-    }
+  .menu-main-headline {
+    margin-top: -2rem;
+  }
 
-    .menu-subtext {
-        font-size: clamp(1.3rem, 2vw, 1.7rem);
-        margin: 0;
-    }
+  .menu-subtext {
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    margin: 0;
+  }
 
-    .description-title {
-        font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-    }
+  .description-title {
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  }
 
-    .description-body {
-        font-size: clamp(1rem, 2vw, 1.2rem);
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .description-body {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .practical-info-text {
-        font-size: clamp(0.8rem, 1vw, 0.9rem);
-    }
+  .practical-info-text {
+    font-size: clamp(0.8rem, 1vw, 0.9rem);
+  }
 }
 
 @media (min-width: 1024px) {
-    .menu-hero-content {
-        margin-top: -10rem; 
-    }
+  .menu-hero-content {
+    margin-top: -10rem;
+  }
 
-    .menu-main-headline {
-        font-size: clamp(2.5rem, 4vw, 4rem);
-    }
+  .menu-main-headline {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+  }
 
-    .menu-subtext {
-        font-size: clamp(1.2rem, 1.5vw, 1.4rem);
-    }
+  .menu-subtext {
+    font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+  }
 
-    .description-body {
-        font-size: clamp(1rem, 1.3vw, 1.15rem);
-    }
+  .description-body {
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+  }
 }
 
 @media (min-width: 1440px) {
-    .menu-hero-content {
-        margin-top: clamp(-10rem, -15vw, -18rem);
-    }
-    
-    .menu-divider-section {
-        margin-top: 0;
-    }
+  .menu-hero-content {
+    margin-top: clamp(-10rem, -15vw, -18rem);
+  }
+
+  .menu-divider-section {
+    margin-top: 0;
+  }
 }
