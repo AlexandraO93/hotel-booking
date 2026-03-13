@@ -136,6 +136,30 @@ form input,
   font-style: italic;
 }
 
+.contact-error {
+  color: #ffd6d6;
+  background: rgba(120, 20, 20, 0.25);
+  border: 1px solid rgba(255, 180, 180, 0.4);
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  margin-top: 0.8rem;
+  text-align: center;
+  width: 50%;
+  align-self: center;
+}
+
+.contact-success {
+  color: #e6fff0;
+  background: rgba(30, 100, 60, 0.3);
+  border: 1px solid rgba(180, 255, 210, 0.4);
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  margin-top: 0.8rem;
+  text-align: center;
+  width: 50%;
+  align-self: center;
+}
+
 @media (min-width: 375px) {
   .contact-title {
     font-size: clamp(2rem, 6vw, 4.5rem);

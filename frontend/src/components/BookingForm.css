@@ -22,8 +22,6 @@
 }
 
 .booking-form-layout {
-  max-width: 1200px;
-  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -32,8 +30,6 @@
   padding: clamp(0.5rem, 4vh, 4rem);
   color: white;
   width: min(80vw, 600px);
-  height: auto;
-  max-width: 1200px;
   background: rgba(255, 255, 255, 0.301);
   backdrop-filter: blur(10px);
   border: 5px double #324645a3;
@@ -156,6 +152,18 @@
 
 .form-btn-abort:hover {
   text-decoration: underline;
+}
+
+.booking-form-error {
+  grid-column: 1 / -1;
+  color: #ffd6d6;
+  background: rgba(120, 20, 20, 0.25);
+  border: 1px solid rgba(255, 180, 180, 0.4);
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 1rem auto 0;
+  width: min(90%, 420px);
 }
 
 @media (min-width: 768px) {

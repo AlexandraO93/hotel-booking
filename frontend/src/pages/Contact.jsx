@@ -3,7 +3,6 @@ import contactImageSmall from "../assets/contact-compressed.png";
 import { useState, useEffect } from "react";
 import "./Contact.css";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
   const [heroImage, setHeroImage] = useState(contactImageSmall);
@@ -13,7 +12,8 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [confirmedEmail, setConfirmedEmail] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate();
+  const [successMessage, setSuccessMessage] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const img = new Image();
@@ -25,6 +25,25 @@ export default function Contact() {
   }, []);
 
   function handleSendContactForm() {
+    if (
+      name.trim() === "" ||
+      email.trim() === "" ||
+      confirmedEmail.trim() === "" ||
+      message.trim() === ""
+    ) {
+      setError("Alla obligatoriska fält måste fyllas i");
+      setSuccessMessage("");
+      return;
+    }
+
+    if (email.trim() !== confirmedEmail.trim()) {
+      setError("Email matchar inte");
+      setSuccessMessage("");
+      return;
+    }
+
+    setError("");
+
     const contactFormData = {
       name,
       bookingReference,
@@ -34,7 +53,7 @@ export default function Contact() {
       message,
     };
     localStorage.setItem("contactFormData", JSON.stringify(contactFormData));
-    alert("Meddelande skickat");
+    setSuccessMessage("Meddelande skickat");
   }
 
   return (
@@ -69,7 +88,11 @@ export default function Contact() {
             placeholder="Skriv ditt namn"
             id="nameInput"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => {
+              setName(e.target.value);
+              setError("");
+              setSuccessMessage("");
+            }}
           />
 
           <label htmlFor="bookingnumber">Bokningsnummer </label>
@@ -78,7 +101,11 @@ export default function Contact() {
             placeholder="Lämna tomt om du ej har bok.nr"
             id="bookingnumber"
             value={bookingReference}
-            onChange={(e) => setBookingReference(e.target.value)}
+            onChange={(e) => {
+              setBookingReference(e.target.value);
+              setError("");
+              setSuccessMessage("");
+            }}
           />
 
           <label htmlFor="phonenumber">Telefonnummer </label>
@@ -87,7 +114,11 @@ export default function Contact() {
             placeholder="+46-7x xxx xx xx"
             id="phonenumber"
             value={phonenumber}
-            onChange={(e) => setPhonenumber(e.target.value)}
+            onChange={(e) => {
+              setPhonenumber(e.target.value);
+              setError("");
+              setSuccessMessage("");
+            }}
           />
 
           <label htmlFor="email">Email *</label>
@@ -97,7 +128,11 @@ export default function Contact() {
             placeholder="example@hotmail.com"
             id="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setError("");
+              setSuccessMessage("");
+            }}
           />
 
           <label htmlFor="verifyEmail">Verifiera Email *</label>
@@ -107,7 +142,11 @@ export default function Contact() {
             placeholder="example@hotmail.com"
             id="verifyEmail"
             value={confirmedEmail}
-            onChange={(e) => setConfirmedEmail(e.target.value)}
+            onChange={(e) => {
+              setConfirmedEmail(e.target.value);
+              setError("");
+              setSuccessMessage("");
+            }}
           />
 
           <label htmlFor="message">Meddelande *</label>
@@ -116,9 +155,19 @@ export default function Contact() {
             required
             placeholder="Skriv ditt meddelande här.."
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={(e) => {
+              setMessage(e.target.value);
+              setError("");
+              setSuccessMessage("");
+            }}
           />
           <p className="forced-input">* Måste fyllas i</p>
+
+          {error && <p className="contact-error">{error}</p>}
+          {successMessage && (
+            <p className="contact-success">{successMessage}</p>
+          )}
+
           <button
             type="button"
             id="contact-btn"

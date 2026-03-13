@@ -177,6 +177,17 @@
   max-width: clamp(2.5rem, 2vw, 3rem);
 }
 
+.booking-error {
+  grid-column: 1 / -1;
+  color: #ffd6d6;
+  background: rgba(120, 20, 20, 0.25);
+  border: 1px solid rgba(255, 180, 180, 0.4);
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 0.8rem;
+}
+
 @media (min-width: 480px) {
   .booking-container {
     max-width: 600px;

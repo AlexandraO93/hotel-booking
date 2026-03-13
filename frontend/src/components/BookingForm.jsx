@@ -16,7 +16,7 @@ export default function BookingForm() {
   const [requests, setRequests] = useState("");
 
   const navigate = useNavigate();
-
+const [error, setError] = useState("");
   const [heroImage, setHeroImage] = useState(confirmationImageSmall);
 
   useEffect(() => {
@@ -41,14 +41,15 @@ export default function BookingForm() {
       confirmedEmail.trim() === "" ||
       phonenumber.trim() === ""
     ) {
-      alert("Alla värden med * måste fyllas i");
+      setError("Alla värden med * måste fyllas i");
       return;
     }
 
     if (email.trim() !== confirmedEmail.trim()) {
-      alert("Email matchar inte");
+      setError("Email matchar inte");
       return;
     }
+    setError("");
 
     const bookingReference = randomBookingNumber();
 
@@ -89,14 +90,20 @@ export default function BookingForm() {
               type="text"
               placeholder="Förnamn *"
               value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={(e) => {
+                setFirstName(e.target.value);
+            setError("");
+              }}
             />
             <input
               className="booking-form-input-content"
               type="text"
               placeholder="Efternamn *"
               value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              onChange={(e) => {
+                setLastName(e.target.value);
+                setError("");
+              }}
             />
           </div>
 
@@ -106,14 +113,20 @@ export default function BookingForm() {
               type="email"
               placeholder="Email *"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+            setError("");
+              }}
             />
             <input
               className="booking-form-input-content"
               type="email"
               placeholder="Bekräfta email *"
               value={confirmedEmail}
-              onChange={(e) => setConfirmedEmail(e.target.value)}
+              onChange={(e) => {
+                setConfirmedEmail(e.target.value);
+            setError("");
+              }}
             />
           </div>
 
@@ -147,7 +160,10 @@ export default function BookingForm() {
               type="text"
               placeholder="Telefonnummer *"
               value={phonenumber}
-              onChange={(e) => setPhonenumber(e.target.value)}
+              onChange={(e) => {
+                setPhonenumber(e.target.value);
+            setError("");
+              }}
             />
           </div>
 
@@ -169,6 +185,8 @@ export default function BookingForm() {
           </div>
 
           <p className="form-info">Bokningen betalas på plats på hotellet</p>
+
+            {error && <p className="booking-form-error">{error}</p>}
 
           <div className="form-btns">
             <button

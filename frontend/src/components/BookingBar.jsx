@@ -8,13 +8,17 @@ const BookingBar = () => {
   const savedSearch = JSON.parse(localStorage.getItem("savedSearch")) || {};
 
   const today = new Date().toISOString().split("T")[0];
-
+  const [error, setError] = useState("");
   const [rooms, setRooms] = useState(savedSearch.rooms || 1);
   const [adults, setAdults] = useState(savedSearch.adults || 2);
   const [children, setChildren] = useState(savedSearch.children || 0);
   const [childAges, setChildAges] = useState(savedSearch.childAges || []);
-  const [checkInDate, setCheckInDate] = useState(savedSearch.checkInDate || today);
-  const [checkOutDate, setCheckOutDate] = useState(savedSearch.checkOutDate || today);
+  const [checkInDate, setCheckInDate] = useState(
+    savedSearch.checkInDate || today,
+  );
+  const [checkOutDate, setCheckOutDate] = useState(
+    savedSearch.checkOutDate || today,
+  );
 
   const handleChildrenChange = (newCount) => {
     const count = Math.max(0, newCount);
@@ -41,21 +45,23 @@ const BookingBar = () => {
 
   function handleSearch() {
     if (checkOutDate < checkInDate || checkInDate === checkOutDate) {
-      alert(
-        "Check-out datum kan inte vara före/eller samma som check-in datum",
+      setError(
+        "Check-out datum måste vara efter check-in datum",
       );
       return;
     }
 
     if (adults <= 0) {
-      alert("Antalet vuxna får ej vara 0");
+      setError("Antalet vuxna får inte vara 0");
       return;
     }
 
     if (children > 0 && childAges.some((age) => age === "")) {
-      alert("Ålder på barn måste väljas");
+      setError("Ålder på barn måste väljas");
       return;
     }
+
+    setError("");
 
     const searchData = {
       checkInDate,
@@ -82,7 +88,10 @@ const BookingBar = () => {
             type="date"
             min={today}
             value={checkInDate}
-            onChange={(e) => setCheckInDate(e.target.value)}
+            onChange={(e) => {
+              setCheckInDate(e.target.value);
+              setError("");
+            }}
           />
         </article>
         <article className="booking-field-date">
@@ -92,7 +101,10 @@ const BookingBar = () => {
             min={today}
             max={maxBookingDate}
             value={checkOutDate}
-            onChange={(e) => setCheckOutDate(e.target.value)}
+            onChange={(e) => {
+              setCheckOutDate(e.target.value);
+              setError("");
+            }}
           />
         </article>
 
@@ -118,13 +130,22 @@ const BookingBar = () => {
           <label>VUXNA</label>
           <div className="counter-controls">
             <button
-              onClick={() => setAdults(Math.max(1, adults - 1))}
+              onClick={() => {
+                setAdults(Math.max(1, adults - 1));
+                setError("");
+              }}
               type="button"
             >
               −
             </button>
             <span className="count-display">{adults}</span>
-            <button onClick={() => setAdults(adults + 1)} type="button">
+            <button
+              onClick={() => {
+                setAdults(adults + 1);
+                setError("");
+              }}
+              type="button"
+            >
               +
             </button>
           </div>
@@ -133,14 +154,20 @@ const BookingBar = () => {
           <label>BARN</label>
           <div className="counter-controls">
             <button
-              onClick={() => handleChildrenChange(children - 1)}
+              onClick={() => {
+                handleChildrenChange(children - 1);
+              setError("");
+              }}
               type="button"
             >
               −
             </button>
             <span className="count-display">{children}</span>
             <button
-              onClick={() => handleChildrenChange(children + 1)}
+              onClick={() => {
+                handleChildrenChange(children + 1);
+              setError("");
+              }}
               type="button"
             >
               +
@@ -150,6 +177,8 @@ const BookingBar = () => {
 
         {/* RAD 4 */}
         <footer className="button-row">
+          {error && <p className="booking-error">{error}</p>}
+
           <button
             onClick={handleSearch}
             type="button"
@@ -171,7 +200,10 @@ const BookingBar = () => {
                   <label>Barn {index + 1}</label>
                   <select
                     value={childAges[index] || ""}
-                    onChange={(e) => updateChildAge(index, e.target.value)}
+                    onChange={(e) => {
+                      updateChildAge(index, e.target.value);
+                    setError("");
+                    }}
                   >
                     <option value="">Välj ålder</option>
                     {Array.from({ length: 13 }).map((_, age) => (
