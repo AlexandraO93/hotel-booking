@@ -77,14 +77,14 @@
 
 @media (min-width: 768px) {
   .qa-main-headline {
-    font-size: clamp(2rem, 5vw, 2.7rem);
+    font-size: clamp(2rem, 4.5vw, 2.7rem);
   }
   .qa-question {
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
   }
 
   .qa-answer {
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-size: clamp(1rem, 2vw, 2rem);
   }
 }
 
@@ -94,10 +94,10 @@
   }
 
   .qa-question {
-    font-size: clamp(1.2rem, 2.2vw, 2rem);
+    font-size: clamp(1.2rem, 2vw, 2rem);
   }
 
   .qa-answer {
-    font-size: clamp(1rem, 1.9vw, 2rem);
+    font-size: clamp(1rem, 1.7vw, 2rem);
   }
 }

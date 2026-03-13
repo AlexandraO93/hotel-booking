@@ -14,6 +14,7 @@ export default function ALaCarte() {
       setHeroImage(aLaCarteImage);
     };
   }, []);
+  
   return (
     <div className="menu-page-container">
       <div

@@ -46,7 +46,6 @@
   max-width: 900px;
   background: transparent;
   backdrop-filter: none;
-  -webkit-backdrop-filter: none;
   border: none;
   box-shadow: none;
 }
@@ -171,6 +170,8 @@
   color: rgba(255, 255, 255, 0.795);
   max-width: 500px;
   margin-top: 0.2rem;
+  margin: 0 auto;
+
 }
 
 .scroll-prompt {
@@ -194,7 +195,7 @@
   }
 
   .menu-main-headline {
-    margin-top: -2rem;
+    margin-top: 0;
   }
 
   .menu-subtext {
@@ -238,7 +239,7 @@
 
 @media (min-width: 1440px) {
   .menu-hero-content {
-    margin-top: clamp(-10rem, -15vw, -18rem);
+    margin-top: clamp(-8rem, -15vw, -18rem);
   }
 
   .menu-divider-section {

@@ -1,0 +1,109 @@
+.confirmation-page-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: calc(var(--footer-height) + 1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.confirmation-hero-img {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.confirmation-hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(0.5rem, 4vh, 4rem);
+  color: white;
+  width: min(85vw, 600px);
+  height: auto;
+  max-width: 1200px;
+  z-index: 2;
+}
+
+.confirmation-container {
+  background: rgba(255, 255, 255, 0.301);
+  backdrop-filter: blur(6px);
+  border: 5px double #324645a3;
+  border-radius: 0.75rem;
+  padding: clamp(0.4rem, 1.5vw, 0.75rem);
+  width: 80vw;
+  height: auto;
+  max-width: clamp(320px, 75vw, 500px);
+  margin: clamp(12vh, auto, 2vh) auto 2vh;
+  box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  color: black;
+}
+
+.confirmation-headline {
+  font-size: clamp(1.3rem, 5vw, 2.3rem);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #3246456d;
+}
+
+.confirmation-title {
+  text-align: left;
+  padding-left: 0.5rem;
+  margin-bottom: 0.3rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.confirmation-content {
+  font-size: clamp(0.76rem, 1vw, 1rem);
+  text-align: left;
+  padding-left: 0.5rem;
+  margin-bottom: 0.3rem;
+  list-style: none;
+}
+
+.confirmation-requests {
+  margin: 1rem 0;
+}
+
+.confirmation-title-price {
+  text-align: left;
+  padding-left: 0.5rem;
+  margin-bottom: 0.1rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.confirmation-price {
+  font-size: clamp(1rem, 1vw, 1rem);
+  text-align: left;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.confirmation-btn {
+  background: transparent;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  font-size: clamp(0.75rem, 1vw, 1.125rem);
+  font-weight: 300;
+  text-align: left;
+  padding: 0;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}

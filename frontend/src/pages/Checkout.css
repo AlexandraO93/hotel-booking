@@ -1,0 +1,301 @@
+.checkout-page-container {
+  background-color: #324645;
+  min-height: 100vh;
+  color: white;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: calc(var(--footer-height) + 1rem);
+}
+
+.checkout-headline {
+  text-align: center;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  font-family: "Cooper Black", serif;
+}
+
+.checkout-layout {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-addons-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  font-size: clamp(0.65rem, 1vw, 1.125rem);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.saved-search-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+  width: 80vw;
+  padding: 0.5rem 1rem;
+  background-color: rgba(171, 153, 105, 0.795);
+  box-shadow: 4px 3px 2px rgba(0, 0, 0, 0.5);
+  align-self: center;
+}
+
+.checkout-rooms,
+.checkout-includes {
+  grid-column: 1 / -1;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  font-size: clamp(0.85rem, 1vw, 1.125rem);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+  text-align: center;
+  width: 90%;
+  justify-self: center;
+}
+
+.checkout-search-info {
+  font-size: clamp(0.65rem, 1vw, 1.125rem);
+  grid-column: 1fr 1fr;
+  font-weight: 500;
+}
+
+.checkout-search-info p,
+p.checkout-rooms,
+p.checkout-includes {
+  margin: 0.1rem;
+}
+
+.checkout-search-content {
+  font-weight: 300;
+}
+
+.checkout-includes-content {
+  font-size: clamp(0.75rem, 1vw, 1.125rem);
+  font-weight: 300;
+  margin: 0.2rem;
+}
+
+.checkout-addons-info {
+  width: 100%;
+  grid-column: 1 / -1;
+  margin-top: 0.2rem;
+}
+
+.checkout-prices {
+  grid-column: 1 / -1;
+}
+
+.checkout-prices-headline {
+  text-align: center;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  font-size: clamp(0.85rem, 1vw, 1.125rem);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+  width: 90%;
+  margin-top: 0.5rem;
+  padding-bottom: 0.2rem;
+}
+
+.checkout-subtotal,
+.checkout-total {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.checkout-subtotal-title {
+  font-size: clamp(0.75rem, 1vw, 1.125rem);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.checkout-subtotal-price {
+  font-size: clamp(0.75rem, 1vw, 1.125rem);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.checkout-total-title,
+.checkout-total-price {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  font-weight: 500;
+  margin-top: 1.2rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.room-addons-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.room-addons-headline {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  margin-top: 0.5rem;
+}
+
+.addon-card-image {
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 4px 3px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.addon-desc {
+  margin: 0;
+  font-size: clamp(0.75rem, 1vw, 1.125rem);
+  text-align: center;
+}
+
+.addon-price {
+  margin-bottom: 0.5rem;
+  font-size: clamp(0.65rem, 1vw, 1.125rem);
+}
+
+.checkout-btns {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 90%;
+}
+
+.checkout-btn-abort {
+  background: transparent;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  font-size: clamp(0.75rem, 1vw, 1.125rem);
+  font-weight: 300;
+  text-align: left;
+  padding: 0;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.checkout-btn-abort:hover {
+  text-decoration: underline;
+}
+
+.checkout-btn {
+  font-size: clamp(0.75rem, 1vw, 1.125rem);
+  background: rgba(171, 153, 105, 0.795);
+  border-radius: 10px;
+  padding: 0.3rem 0.5rem;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background: rgba(122, 110, 77, 0.903);
+  transition: 0.2s background ease;
+}
+
+@media (min-width: 768px) {
+  .saved-search-bar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    width: 70%;
+    padding: 0.5rem 2rem;
+    margin: 1rem 0;
+  }
+
+  .checkout-layout {
+    width: 60%;
+  }
+
+  .checkout-headline {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .checkout-rooms,
+  .checkout-includes,
+  .checkout-prices-headline {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-align: center;
+    width: 100%;
+  }
+
+  .checkout-search-info,
+  .checkout-includes-content,
+  .checkout-subtotal-title,
+  .checkout-subtotal-price,
+  .addon-price {
+    font-size: clamp(0.85rem, 1.5vw, 1.2rem);
+  }
+
+  .room-addons-headline {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+  }
+
+  .addon-desc,
+  .checkout-btn {
+    font-size: clamp(0.95rem, 1.5vw, 1.5rem);
+  }
+
+  .addon-price {
+    margin-bottom: 2rem;
+  }
+
+  .checkout-btn-abort {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .checkout-headline {
+    grid-column: 1 / -1;
+    font-size: clamp(2rem, 2.5vw, 4rem);
+  }
+
+  .checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    width: 80%;
+    align-items: start;
+  }
+
+  .saved-search-bar {
+    width: 90%;
+    height: auto;
+    margin-top: 0;
+    justify-self: start;
+    align-self: start;
+    margin-top: 4rem;
+  }
+
+  .room-addons-layout {
+    gap: 1.5rem;
+  }
+
+  .addon-card-image {
+    width: 100%;
+  }
+
+  .checkout-addons-info,
+  .checkout-prices-headline {
+    margin-top: 2.5rem;
+  }
+
+  .room-addons-headline {
+    margin-bottom: 0;
+  }
+
+  .checkout-total-title,
+  .checkout-total-price {
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    margin-top: 2.5rem;
+  }
+}

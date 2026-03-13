@@ -21,6 +21,7 @@ export default function Booking() {
       shortDescription:
         "Ett ljust och bekvämt rum med allt du behöver för en avkopplande vistelse.",
       image: standardRoomImage,
+      price: 1100
     },
     {
       id: 2,
@@ -29,6 +30,7 @@ export default function Booking() {
       shortDescription:
         "Ett rymligare rum med extra komfort och en lugn, harmonisk känsla.",
       image: superiorRoomImage,
+      price: 1500
     },
     {
       id: 3,
@@ -37,6 +39,7 @@ export default function Booking() {
       shortDescription:
         "En elegant svit med generösa ytor för dig som vill bo extra bekvämt.",
       image: suiteRoomImage,
+      price: 2200
     },
     {
       id: 4,
@@ -45,6 +48,7 @@ export default function Booking() {
       shortDescription:
         "Perfekt för familjen, med gott om plats och bekväma sovlösningar.",
       image: familyRoomImage,
+      price: 1800
     },
   ];
 
@@ -76,18 +80,13 @@ export default function Booking() {
   }
 
   function handleUpdateRoom() {
-    setShowAddons(false)
+    setShowAddons(false);
   }
 
   function handleContinueToCheckout() {
     localStorage.setItem("selectedRoom", JSON.stringify(selectedRoom));
-    localStorage.setItem(
-      "selectedAddons",
-      JSON.stringify({
-        dinnerIncluded,
-      }),
+    localStorage.setItem("selectedAddons",JSON.stringify({dinnerIncluded,}),
     );
-
     navigate("/checkout");
   }
 
@@ -97,149 +96,154 @@ export default function Booking() {
         <h2 className="booking-headline">Välj en rumstyp</h2>
       </header>
 
-      <aside className="search-info-bar">
-        <h4 className="search-info-headline">Du har sökt:</h4>
+      <div className="booking-layout">
+        <aside className="search-info-bar">
+          <h4 className="search-info-headline">Du har sökt:</h4>
 
-        <div className="search-summary-layout">
-          <div className="search-dates">
-            <div className="search-info-content">
-              <p className="search-info-title" id="checkin">
-                <strong>Incheckning</strong>
-              </p>
-              <p className="search-info-subtext">{savedSearch.checkInDate}</p>
+          <div className="search-summary-layout">
+            <div className="search-dates">
+              <div className="search-info-content">
+                <p className="search-info-title" id="checkin">
+                  <strong>Incheckning</strong>
+                </p>
+                <p className="search-info-subtext">{savedSearch.checkInDate}</p>
+              </div>
+
+              <div className="search-info-content">
+                <p className="search-info-title" id="checkout">
+                  <strong>Utcheckning</strong>
+                </p>
+                <p className="search-info-subtext">
+                  {savedSearch.checkOutDate}
+                </p>
+              </div>
+              <button
+                className="update-booking-btn"
+                type="button"
+                onClick={handleUpdateSearch}
+              >
+                Ändra sökning
+              </button>
             </div>
 
-            <div className="search-info-content">
-              <p className="search-info-title" id="checkout">
-                <strong>Utcheckning</strong>
-              </p>
-              <p className="search-info-subtext">{savedSearch.checkOutDate}</p>
+            <div className="search-meta">
+              <div className="search-info-content">
+                <div className="info-row">
+                  <p className="search-info-title" id="nights">
+                    <strong>Antal nätter</strong>
+                  </p>
+                  <p className="search-info-subtext">{nights}</p>
+                </div>
+              </div>
+              <div className="search-info-content">
+                <div className="info-row">
+                  <p className="search-info-title" id="rooms">
+                    <strong>Antal rum</strong>
+                  </p>
+                  <p className="search-info-subtext">{savedSearch.rooms}</p>
+                </div>
+              </div>
+              <div className="search-info-content">
+                <div className="info-row">
+                  <p className="search-info-title" id="guests">
+                    <strong>Antal pers.</strong>
+                  </p>
+                  <p className="search-info-subtext">{savedSearch.guests}</p>
+                </div>
+              </div>
             </div>
-            <button
-              className="update-booking-btn"
-              type="button"
-              onClick={handleUpdateSearch}
-            >
-              Ändra sökning
-            </button>
           </div>
+        </aside>
 
-          <div className="search-meta">
-            <div className="search-info-content">
-              <div className="info-row">
-                <p className="search-info-title" id="nights">
-                  <strong>Antal nätter</strong>
-                </p>
-                <p className="search-info-subtext">{nights}</p>
-              </div>
-            </div>
-            <div className="search-info-content">
-              <div className="info-row">
-                <p className="search-info-title" id="rooms">
-                  <strong>Antal rum</strong>
-                </p>
-                <p className="search-info-subtext">{savedSearch.rooms}</p>
-              </div>
-            </div>
-            <div className="search-info-content">
-              <div className="info-row">
-                <p className="search-info-title" id="guests">
-                  <strong>Antal pers.</strong>
-                </p>
-                <p className="search-info-subtext">{savedSearch.guests}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
+        <section className="available-rooms">
+          {availableRooms.length === 0 ? (
+            <p>Tyvärr finns inga rum för detta antal gäster.</p>
+          ) : (
+            availableRooms
+              .filter((room) => !showAddons || room.id === selectedRoom?.id)
+              .map((room) => {
+                const isSelectedCard =
+                  showAddons && selectedRoom?.id === room.id;
 
-      <section className="available-rooms">
-        {availableRooms.length === 0 ? (
-          <p>Tyvärr finns inga rum för detta antal gäster.</p>
-        ) : (
-          availableRooms
-            .filter((room) => !showAddons || room.id === selectedRoom?.id)
-            .map((room) => {
-              const isSelectedCard = showAddons && selectedRoom?.id === room.id;
-
-              return (
-                <div className="booking-room-card" key={room.id}>
-                  {isSelectedCard ? (
-                    <div className="booking-room-content booking-addon-content">
-                      <h3 className="booking-room-name">{room.name}</h3>
-                      <p className="booking-room-desc">
-                        Vill du lägga till middag?
-                      </p>
-
-                      <div className="addon-options">
-                      <label className="addon-option">
-                        <input
-                          type="radio"
-                          name="dinner"
-                          checked={dinnerIncluded === true}
-                          onChange={() => setDinnerIncluded(true)}
-                        />
-                         Ja
-                      </label>
-
-                      <label className="addon-option">
-                        <input
-                          type="radio"
-                          name="dinner"
-                          checked={dinnerIncluded === false}
-                          onChange={() => setDinnerIncluded(false)}
-                        />
-                         Nej
-                      </label>
-                      </div>
-                      <div className="room-btns">
-                        <button
-                          type="button"
-                          className="continue-booking-btn"
-                          onClick={handleContinueToCheckout}
-                        >
-                          Fortsätt till checkout
-                        </button>
-                        <button
-                          type="button"
-                          className="continue-booking-btn"
-                          onClick={handleUpdateRoom}
-                        >
-                          Ändra rum
-                        </button>
-                      </div>
-                    </div>
-                  ) : (
-                    <>
-                      <img
-                        src={room.image}
-                        alt={room.name}
-                        className="booking-room-image"
-                      />
-
-                      <div className="booking-room-content">
+                return (
+                  <div className="booking-room-card" key={room.id}>
+                    {isSelectedCard ? (
+                      <div className="booking-room-content booking-addon-content">
                         <h3 className="booking-room-name">{room.name}</h3>
                         <p className="booking-room-desc">
-                          {room.shortDescription}
+                          Vill du lägga till middag?
                         </p>
-                        <p className="booking-room-max">
-                          Passar upp till {room.maxGuests} gäster
-                        </p>
-                        <button
-                          className="booking-room-btn"
-                          type="button"
-                          onClick={() => handleSelectRoom(room)}
-                        >
-                          Välj rum
-                        </button>
+
+                        <div className="addon-options">
+                          <label className="addon-option">
+                            <input
+                              type="radio"
+                              name="dinner"
+                              checked={dinnerIncluded === true}
+                              onChange={() => setDinnerIncluded(true)}
+                            />
+                            Ja
+                          </label>
+
+                          <label className="addon-option">
+                            <input
+                              type="radio"
+                              name="dinner"
+                              checked={dinnerIncluded === false}
+                              onChange={() => setDinnerIncluded(false)}
+                            />
+                            Nej
+                          </label>
+                        </div>
+                        <div className="room-btns">
+                          <button
+                            type="button"
+                            className="continue-booking-btn"
+                            onClick={handleContinueToCheckout}
+                          >
+                            Fortsätt till checkout
+                          </button>
+                          <button
+                            type="button"
+                            className="continue-booking-btn"
+                            onClick={handleUpdateRoom}
+                          >
+                            Ändra rum
+                          </button>
+                        </div>
                       </div>
-                    </>
-                  )}
-                </div>
-              );
-            })
-        )}
-      </section>
+                    ) : (
+                      <>
+                        <img
+                          src={room.image}
+                          alt={room.name}
+                          className="booking-room-image"
+                        />
+
+                        <div className="booking-room-content">
+                          <h3 className="booking-room-name">{room.name}</h3>
+                          <p className="booking-room-desc">
+                            {room.shortDescription}
+                          </p>
+                          <p className="booking-room-max">
+                            Passar upp till {room.maxGuests} gäster
+                          </p>
+                          <button
+                            className="booking-room-btn"
+                            type="button"
+                            onClick={() => handleSelectRoom(room)}
+                          >
+                            Välj rum
+                          </button>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                );
+              })
+          )}
+        </section>
+      </div>
     </div>
   );
 }

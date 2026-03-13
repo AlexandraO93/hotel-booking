@@ -3,9 +3,17 @@ import contactImageSmall from "../assets/contact-compressed.png";
 import { useState, useEffect } from "react";
 import "./Contact.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
   const [heroImage, setHeroImage] = useState(contactImageSmall);
+  const [name, setName] = useState("");
+  const [bookingReference, setBookingReference] = useState("");
+  const [phonenumber, setPhonenumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [confirmedEmail, setConfirmedEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const img = new Image();
@@ -15,6 +23,19 @@ export default function Contact() {
       setHeroImage(contactImage);
     };
   }, []);
+
+  function handleSendContactForm() {
+    const contactFormData = {
+      name,
+      bookingReference,
+      phonenumber,
+      email,
+      confirmedEmail,
+      message,
+    };
+    localStorage.setItem("contactFormData", JSON.stringify(contactFormData));
+    alert("Meddelande skickat");
+  }
 
   return (
     <div className="contact-page">
@@ -47,6 +68,8 @@ export default function Contact() {
             required
             placeholder="Skriv ditt namn"
             id="nameInput"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
 
           <label htmlFor="bookingnumber">Bokningsnummer </label>
@@ -54,10 +77,18 @@ export default function Contact() {
             type="text"
             placeholder="Lämna tomt om du ej har bok.nr"
             id="bookingnumber"
+            value={bookingReference}
+            onChange={(e) => setBookingReference(e.target.value)}
           />
 
           <label htmlFor="phonenumber">Telefonnummer </label>
-          <input type="text" placeholder="+46-7x xxx xx xx" id="phonenumber" />
+          <input
+            type="text"
+            placeholder="+46-7x xxx xx xx"
+            id="phonenumber"
+            value={phonenumber}
+            onChange={(e) => setPhonenumber(e.target.value)}
+          />
 
           <label htmlFor="email">Email *</label>
           <input
@@ -65,6 +96,8 @@ export default function Contact() {
             required
             placeholder="example@hotmail.com"
             id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label htmlFor="verifyEmail">Verifiera Email *</label>
@@ -73,6 +106,8 @@ export default function Contact() {
             required
             placeholder="example@hotmail.com"
             id="verifyEmail"
+            value={confirmedEmail}
+            onChange={(e) => setConfirmedEmail(e.target.value)}
           />
 
           <label htmlFor="message">Meddelande *</label>
@@ -80,9 +115,15 @@ export default function Contact() {
             id="message"
             required
             placeholder="Skriv ditt meddelande här.."
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           />
           <p className="forced-input">* Måste fyllas i</p>
-          <button type="submit" id="contact-btn">
+          <button
+            type="button"
+            id="contact-btn"
+            onClick={handleSendContactForm}
+          >
             Skicka
           </button>
         </form>

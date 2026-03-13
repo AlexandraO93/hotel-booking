@@ -1,5 +1,5 @@
 .room-page-container {
-  background-color: #324645;
+  background-color: #344e4d;
   color: white;
   padding-top: 2rem;
   display: flex;
@@ -125,17 +125,23 @@
 }
 
 @media (min-width: 1024px) {
+  .room-page-container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
   .room-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     max-width: 1200px;
-    gap: 2.5rem;
+    margin:0;
   }
 
   .room-card {
     display: flex;
     flex-direction: column;
     height: 100%;
+    gap: 2rem;
   }
 
   .room-card-image {

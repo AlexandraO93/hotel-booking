@@ -57,16 +57,13 @@
 .contact-form-section {
   position: relative;
   z-index: 3;
-  margin-top: 2rem;
-  padding: clamp(1rem, 4vh, 3rem) 1.5rem;
-  width: 85%;
-  max-width: 600px;
+  margin: 2rem auto 0;
+  padding: 1.5rem 0.9rem;
+  width: min(80%, 520px);
   background: rgba(255, 255, 255, 0.31);
   backdrop-filter: blur(12px);
   border-radius: 9px;
   box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.3);
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .contact-form {
@@ -78,13 +75,12 @@ form {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 100%;
-  max-width: 450px;
+  width: 90%;
   margin: 0 auto;
 }
 
 .form-title {
-  font-size: clamp(1.2rem, 2vw, 3rem);
+  font-size: clamp(1.1rem, 2vw, 3rem);
   font-weight: 600;
 }
 
@@ -92,17 +88,18 @@ form label {
   font-weight: 600;
   display: block;
   text-align: left;
+  font-size: clamp(0.8rem, 2vw, 3rem);
 }
 
 form input,
 #message {
   font-size: clamp(0.7rem, 2vw, 2.5rem);
   display: block;
-  width: 80%;
+  width: 100%;
 }
 
-.contact-form .forced-input {
-  font-size: clamp(0.6rem, 1vw, 2rem);
+.forced-input {
+  font-size: clamp(0.7rem, 1vw, 2rem);
 }
 
 #contact-btn {
@@ -191,42 +188,43 @@ form input,
 
 @media (min-width: 1024px) {
   .contact-title {
-    font-size: clamp(2rem, 5vw, 4rem);
-    margin-bottom: clamp(0.3rem, 2vh, 1.5rem);
+    font-size: clamp(2.5rem, 4vw, 4rem);
   }
 
   .contact-subtitle {
-    font-size: clamp(0.7rem, 2vw, 3rem);
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
     width: 50%;
   }
 
   #qa {
-    font-size: clamp(0.7rem, 1.5vw, 3rem);
-    padding: 0.8rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+    padding: 0.8rem 1.2rem;
   }
 
-  section {
+  .contact-form-section {
     width: 50%;
+    max-width: 700px;
   }
 
   .form-title {
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: clamp(1.5rem, 1.6vw, 2rem);
   }
 
   form label {
-    font-size: clamp(0.7rem, 1.7vw, 2rem);
+    font-size: clamp(1rem, 1.1vw, 1.2rem);
   }
 
-  form input {
-    font-size: clamp(0.6rem, 1.6vw, 2rem);
+  form input,
+  #message {
+    font-size: clamp(0.95rem, 1vw, 1.1rem);
   }
 
   .contact-form .forced-input {
-    font-size: clamp(0.8rem, 1vw, 2rem);
+    font-size: clamp(0.95rem, 1vw, 1.1rem);
   }
 
   .ending-slogan {
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: clamp(1.2rem, 1.5vw, 1.7rem);
     margin-bottom: -3rem;
     margin-top: 2rem;
   }

@@ -11,6 +11,9 @@ import KidsMenu from "./pages/Kids-menu";
 import AboutUs from "./pages/About-us";
 import Contact from "./pages/Contact";
 import Qa from "./pages/Qa";
+import Checkout from "./pages/Checkout";
+import BookingForm from "./components/BookingForm";
+import Confirmation from "./pages/Confirmation";
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/qa" element={<Qa />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkout" element={<BookingForm />} />
+          <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
       </main>
       <Footer />
