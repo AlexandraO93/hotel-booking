@@ -117,10 +117,6 @@ Some planned or possible improvements include:
 
 # Screenshots
 
-(Add screenshots here if you want)
-
-Example:
-
 ## Home page
 
 ![Home](./screenshots/home.png)
@@ -132,6 +128,10 @@ Example:
 ## Checkout
 
 ![Checkout](./screenshots/checkout.png)
+
+## Confirmation
+
+![Confirmation](./screenshots/confirmation.png)
 
 ---
 
