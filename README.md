@@ -1,5 +1,8 @@
 # Roslagen Escape – Hotel Booking Website
-🚧 Work in progress
+🚧 **Work in progress**
+
+This project is currently under active development.  
+Some features may still be incomplete.
 
 ![Project preview](./screenshots/home.png)
 
