@@ -1,6 +1,8 @@
 # Roslagen Escape – Hotel Booking Website
 🚧 Work in progress
 
+![Project preview](./screenshots/home.png)
+
 Roslagen Escape is a fictional hotel booking website built as a full-stack practice project.  
 The goal of the project was to simulate a real hotel website where users can explore rooms, view menus, and go through a booking flow.
 
@@ -48,29 +50,43 @@ https://alexandrao93.github.io/hotel-booking/
 ---
 
 # Project Structure
-src
+hotel-booking
 │
-├── components
-│ ├── Navbar
-│ ├── Footer
-│ ├── BookingBar
-│ └── BookingForm
+├─ backend
+│ └─ booking
+│ ├─ src
+│ │ └─ main
+│ │ └─ java/com/hotel/booking
+│ │ ├─ controller
+│ │ ├─ dto
+│ │ ├─ exceptions
+│ │ ├─ mapper
+│ │ ├─ model
+│ │ ├─ repository
+│ │ └─ service
+│ │
+│ ├─ resources
+│ ├─ test
+│ ├─ pom.xml
+│ └─ mvnw / mvnw.cmd
 │
-├── pages
-│ ├── Home
-│ ├── Booking
-│ ├── Room
-│ ├── Checkout
-│ ├── Confirmation
-│ ├── Food-drinks
-│ ├── Breakfast
-│ ├── A-la-carte
-│ ├── Kids-menu
-│ ├── Contact
-│ ├── About-us
-│ └── Qa
+├─ frontend
+│ ├─ public
+│ ├─ src
+│ │ ├─ assets
+│ │ ├─ components
+│ │ ├─ pages
+│ │ ├─ App.jsx
+│ │ ├─ App.css
+│ │ ├─ index.css
+│ │ └─ main.jsx
+│ │
+│ ├─ package.json
+│ ├─ vite.config.js
+│ └─ index.html
 │
-└── App.jsx
+├─ screenshots
+  └─ project screenshots used in the README
 
 The project uses **page-based routing** with reusable **component-based UI elements**.
 
