@@ -10,12 +10,12 @@
 }
 
 .booking-layout {
-    width: 90%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
 .booking-header {
   text-align: center;
@@ -131,6 +131,14 @@
   width: 80vw;
   border-radius: 12px;
   overflow: hidden;
+  transition: filter 0.35s ease, opacity 0.35s ease;
+  filter: blur(6px);
+  opacity: 0.95;
+}
+
+.booking-room-image.loaded {
+  filter: blur(0);
+  opacity: 1;
 }
 
 .booking-room-content {

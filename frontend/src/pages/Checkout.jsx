@@ -25,46 +25,30 @@ export default function Checkout() {
   const navigate = useNavigate();
 
   const [beerImage, setBeerImage] = useState(beerImageSmall);
-  useEffect(() => {
-    const img = new Image();
-    img.src = beerImageLarge;
-
-    img.onload = () => {
-      setBeerImage(beerImageLarge);
-    };
-  }, []);
-
+  const [beerLoaded, setBeerLoaded] = useState(false);
   const [bubblesImage, setBubblesImage] = useState(bubblesImageSmall);
-  useEffect(() => {
-    const img = new Image();
-    img.src = bubblesImageLarge;
-
-    img.onload = () => {
-      setBubblesImage(bubblesImageLarge);
-    };
-  }, []);
-
-  const [fruitChocolateImage, setFruitChocolateImage] = useState(
-    fruitChocolateImageSmall,
-  );
-  useEffect(() => {
-    const img = new Image();
-    img.src = fruitChocolateImageLarge;
-
-    img.onload = () => {
-      setFruitChocolateImage(fruitChocolateImageLarge);
-    };
-  }, []);
-
+  const [bubblesLoaded, setBubblesLoaded] = useState(false);
+  const [fruitChocolateImage, setFruitChocolateImage] = useState(fruitChocolateImageSmall,);
+  const [fruitChocolateLoaded, setFruitChocolateLoaded] = useState(false);
   const [snacksbarImage, setSnacksbarImage] = useState(snacksbarImageSmall);
+  const [snacksbarLoaded, setSnacksbarLoaded] = useState(false);
+
+ function preloadImage(setImage, setLoaded, largeImage) {
+    const img = new Image();
+    img.src = largeImage;
+    img.onload = () => {
+      setImage(largeImage);
+      setLoaded(true);
+    };
+  }
+
 
   useEffect(() => {
-    const img = new Image();
-    img.src = snacksbarImageLarge;
+    preloadImage(setBeerImage, setBeerLoaded, beerImageLarge)
+    preloadImage(setBubblesImage, setBubblesLoaded, bubblesImageLarge)
+    preloadImage(setFruitChocolateImage, setFruitChocolateLoaded, fruitChocolateImageLarge)
+    preloadImage(setSnacksbarImage, setSnacksbarLoaded, snacksbarImageLarge)
 
-    img.onload = () => {
-      setSnacksbarImage(snacksbarImageLarge);
-    };
   }, []);
 
   let nights = 0;
@@ -204,7 +188,7 @@ export default function Checkout() {
                   <img
                     src={fruitChocolateImage}
                     alt="Frukt- och chokladfat"
-                    className="addon-card-image"
+                    className={`addon-card-image ${setFruitChocolateLoaded ? "loaded" : ""}`}
                   />{" "}
                   <br />
                   <input
@@ -222,7 +206,7 @@ export default function Checkout() {
                   <img
                     src={snacksbarImage}
                     alt="Snacksfat"
-                    className="addon-card-image"
+                    className={`addon-card-image ${setSnacksbarLoaded ? "loaded" : ""}`}
                   />{" "}
                   <br />
                   <input
@@ -240,7 +224,7 @@ export default function Checkout() {
                   <img
                     src={beerImage}
                     alt="Ölkorg"
-                    className="addon-card-image"
+                    className={`addon-card-image ${setBeerLoaded ? "loaded" : ""}`}
                   />
                   <div>
                     <input
@@ -259,7 +243,7 @@ export default function Checkout() {
                   <img
                     src={bubblesImage}
                     alt="Champage"
-                    className="addon-card-image"
+                    className={`addon-card-image ${setBubblesLoaded ? "loaded" : ""}`}
                   />
                   <br />
                   <input
@@ -282,6 +266,13 @@ export default function Checkout() {
                 onClick={() => navigate("/hotel-booking")}
               >
                 Avbryt och gå tillbaka till startsidan
+              </button>
+              <button
+                className="checkout-btn"
+                type="button"
+                onClick={() => navigate("/booking")}
+              >
+                Ändra bokning
               </button>
               <button
                 className="checkout-btn"

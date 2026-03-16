@@ -24,7 +24,15 @@
   background-size: cover;
   background-position: center 20% top;
   background-repeat: no-repeat;
+  transition: filter 0.35s ease, opacity 0.35s ease;
+  filter: blur(6px);
+  opacity: 0.95;
   z-index: 1;
+}
+
+.about-us-img.loaded {
+  filter: blur(0);
+  opacity: 1;
 }
 
 .hero-section-about {

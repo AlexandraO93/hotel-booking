@@ -6,21 +6,28 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [heroImage, setHeroImage] = useState(hotelImageSmall);
+  const [heroLoaded, setHeroLoaded] = useState(false);
 
-  useEffect(() => {
+
+  function preloadImage(setImage, setLoaded, largeImage) {
     const img = new Image();
-    img.src = hotelImage;
+    img.src = largeImage;
 
     img.onload = () => {
-      setHeroImage(hotelImage);
+      setImage(largeImage);
+      setLoaded(true);
     };
-  }, []);
+  }
+
+  useEffect (() => {
+    preloadImage(setHeroImage, setHeroLoaded, hotelImage)
+  },[]);
 
   return (
     <div>
       <div className="hero-section">
         <div
-          className="hero-bg-img"
+          className={`hero-bg-img ${heroLoaded ? "loaded" : ""}`}
           style={{
             backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${heroImage})`,
           }}

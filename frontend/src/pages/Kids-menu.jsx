@@ -5,20 +5,26 @@ import { useState, useEffect } from "react";
 
 export default function KidsMenu() {
   const [heroImage, setHeroImage] = useState(kidsMenuImageSmall);
+  const [heroLoaded, setHeroLoaded] = useState(false);
 
-  useEffect(() => {
+  function preloadImage(setImage, setLoaded, largeImage) {
     const img = new Image();
-    img.src = kidsMenuImage;
+    img.src = largeImage;
 
     img.onload = () => {
-      setHeroImage(kidsMenuImage);
+      setImage(largeImage);
+      setLoaded(true);
     };
+  }
+
+  useEffect(() => {
+    preloadImage(setHeroImage, setHeroLoaded, kidsMenuImage);
   }, []);
 
   return (
     <div className="menu-page-container">
       <div
-        className="menu-hero-img"
+        className={`menu-hero-img ${heroLoaded ? "loaded" : ""}`}
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url(${heroImage})`,
         }}

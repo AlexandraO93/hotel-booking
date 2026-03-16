@@ -57,6 +57,11 @@
 .navBar .navbar-collapse.show {
   max-height: 80vh;
   opacity: 1;
+  padding: 0;
+}
+
+.navBar .ms-auto.navLinks > .nav-link:last-child {
+  border-bottom: none;
 }
 
 /*---Links---*/

@@ -1,17 +1,45 @@
 import "./Booking.css";
 import standardRoomImage from "../assets/standard-room.png";
+import standardRoomImageSmall from "../assets/standard-room-compressed.png";
+import superiorRoomImageSmall from "../assets/superior-room-compressed.png";
 import superiorRoomImage from "../assets/superior-room.png";
+import suiteRoomImageSmall from "../assets/suite-room-compressed.png";
 import suiteRoomImage from "../assets/suite-room.png";
+import familyRoomImageSmall from "../assets/family-room-compressed.png";
 import familyRoomImage from "../assets/family-room.png";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Booking() {
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [showAddons, setShowAddons] = useState(false);
   const [dinnerIncluded, setDinnerIncluded] = useState(false);
+  const [standardImage, setStandardImage] = useState(standardRoomImageSmall);
+  const [superiorImage, setSuperiorImage] = useState(superiorRoomImageSmall);
+  const [suiteImage, setSuiteImage] = useState(suiteRoomImageSmall);
+  const [familyImage, setFamilyImage] = useState(familyRoomImageSmall);
+  const [standardLoaded, setStandardLoaded] = useState(false);
+  const [superiorLoaded, setSuperiorLoaded] = useState(false);
+  const [suiteLoaded, setSuiteLoaded] = useState(false);
+  const [familyLoaded, setFamilyLoaded] = useState(false);
 
   const navigate = useNavigate();
+
+  function preloadImage(setImage, setLoaded, largeImage) {
+    const img = new Image();
+    img.src = largeImage;
+    img.onload = () => {
+      setImage(largeImage);
+      setLoaded(true);
+    };
+  }
+
+  useEffect(() => {
+    preloadImage(setStandardImage, setStandardLoaded, standardRoomImage);
+    preloadImage(setSuperiorImage, setSuperiorLoaded, superiorRoomImage);
+    preloadImage(setSuiteImage, setSuiteLoaded, suiteRoomImage);
+    preloadImage(setFamilyImage, setFamilyLoaded, familyRoomImage);
+  }, []);
 
   const rooms = [
     {
@@ -20,8 +48,9 @@ export default function Booking() {
       maxGuests: 2,
       shortDescription:
         "Ett ljust och bekvämt rum med allt du behöver för en avkopplande vistelse.",
-      image: standardRoomImage,
-      price: 1100
+      image: standardImage,
+      loaded: standardLoaded,
+      price: 1100,
     },
     {
       id: 2,
@@ -29,8 +58,9 @@ export default function Booking() {
       maxGuests: 2,
       shortDescription:
         "Ett rymligare rum med extra komfort och en lugn, harmonisk känsla.",
-      image: superiorRoomImage,
-      price: 1500
+      image: superiorImage,
+      loaded: superiorLoaded,
+      price: 1500,
     },
     {
       id: 3,
@@ -38,8 +68,9 @@ export default function Booking() {
       maxGuests: 3,
       shortDescription:
         "En elegant svit med generösa ytor för dig som vill bo extra bekvämt.",
-      image: suiteRoomImage,
-      price: 2200
+      image: suiteImage,
+      loaded: suiteLoaded,
+      price: 2200,
     },
     {
       id: 4,
@@ -47,8 +78,9 @@ export default function Booking() {
       maxGuests: 4,
       shortDescription:
         "Perfekt för familjen, med gott om plats och bekväma sovlösningar.",
-      image: familyRoomImage,
-      price: 1800
+      image: familyImage,
+      loaded: familyLoaded,
+      price: 1800,
     },
   ];
 
@@ -65,9 +97,9 @@ export default function Booking() {
     nights = diffInMs / (1000 * 60 * 60 * 24);
   }
 
-  const availableRooms = rooms.filter(
-    (room) => room.maxGuests >= (savedSearch.guests || 0),
-  );
+  const guests = savedSearch.guests ?? 1;
+
+  const availableRooms = rooms.filter((room) => room.maxGuests >= guests);
 
   function handleUpdateSearch() {
     navigate("/hotel-booking");
@@ -79,14 +111,15 @@ export default function Booking() {
     setShowAddons(true);
   }
 
-  function handleUpdateRoom() {
+  function handleBackToRoomSelection() {
     setShowAddons(false);
   }
 
   function handleContinueToCheckout() {
+    if (!selectedRoom) return;
+
     localStorage.setItem("selectedRoom", JSON.stringify(selectedRoom));
-    localStorage.setItem("selectedAddons",JSON.stringify({dinnerIncluded,}),
-    );
+    localStorage.setItem("selectedAddons", JSON.stringify({ dinnerIncluded }));
     navigate("/checkout");
   }
 
@@ -106,7 +139,13 @@ export default function Booking() {
                 <p className="search-info-title" id="checkin">
                   <strong>Incheckning</strong>
                 </p>
-                <p className="search-info-subtext">{savedSearch.checkInDate}</p>
+                <p className="search-info-subtext">
+                  {savedSearch.checkInDate
+                    ? new Date(savedSearch.checkInDate).toLocaleDateString(
+                        "sv-SE",
+                      )
+                    : ""}
+                </p>
               </div>
 
               <div className="search-info-content">
@@ -114,7 +153,11 @@ export default function Booking() {
                   <strong>Utcheckning</strong>
                 </p>
                 <p className="search-info-subtext">
-                  {savedSearch.checkOutDate}
+                  {savedSearch.checkOutDate
+                    ? new Date(savedSearch.checkOutDate).toLocaleDateString(
+                        "sv-SE",
+                      )
+                    : ""}
                 </p>
               </div>
               <button
@@ -206,7 +249,7 @@ export default function Booking() {
                           <button
                             type="button"
                             className="continue-booking-btn"
-                            onClick={handleUpdateRoom}
+                            onClick={handleBackToRoomSelection}
                           >
                             Ändra rum
                           </button>
@@ -217,7 +260,7 @@ export default function Booking() {
                         <img
                           src={room.image}
                           alt={room.name}
-                          className="booking-room-image"
+                          className={`booking-room-image ${room.loaded ? "loaded" : ""}`}
                         />
 
                         <div className="booking-room-content">

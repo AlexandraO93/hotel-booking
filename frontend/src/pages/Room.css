@@ -57,6 +57,14 @@
   height: clamp(200px, 40vh, 450px);
   object-fit: cover;
   display: block;
+  transition: filter 0.35s ease, opacity 0.35s ease;
+  filter: blur(6px);
+  opacity: 0.95;
+}
+
+.room-card-image.loaded {
+  filter: blur(0);
+  opacity: 1;
 }
 
 .room-card-content {

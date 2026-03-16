@@ -11,47 +11,28 @@ import { useState, useEffect } from "react";
 
 export default function Room() {
   const [standardImage, setStandardImage] = useState(standardRoomImageSmall);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = standardRoomImage;
-
-    img.onload = () => {
-      setHeroImage(standardRoomImage);
-    };
-  }, []);
-
+  const [standardLoaded, setStandardLoaded] = useState(false);
   const [superiorImage, setSuperiorImage] = useState(superiorRoomImageSmall);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = superiorRoomImage;
-
-    img.onload = () => {
-      setHeroImage(superiorRoomImage);
-    };
-  }, []);
-
+  const [superiorLoaded, setSuperiorLoaded] = useState(false);
   const [suiteImage, setSuiteImage] = useState(suiteRoomImageSmall);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = suiteRoomImage;
-
-    img.onload = () => {
-      setHeroImage(suiteRoomImage);
-    };
-  }, []);
-
+  const [suiteLoaded, setSuiteLoaded] = useState(false);
   const [familyImage, setFamilyImage] = useState(familyRoomImageSmall);
+  const [familyLoaded, setFamilyLoaded] = useState(false);
+
+  function preloadImage(setImage, setLoaded, largeImage) {
+    const img = new Image();
+    img.src = largeImage;
+    img.onload = () => {
+      setImage(largeImage);
+      setLoaded(true);
+    };
+  }
 
   useEffect(() => {
-    const img = new Image();
-    img.src = familyRoomImage;
-
-    img.onload = () => {
-      setHeroImage(familyRoomImage);
-    };
+    preloadImage(setStandardImage, setStandardLoaded, standardRoomImage);
+    preloadImage(setSuperiorImage, setSuperiorLoaded, superiorRoomImage);
+    preloadImage(setSuiteImage, setSuiteLoaded, suiteRoomImage);
+    preloadImage(setFamilyImage, setFamilyLoaded, familyRoomImage);
   }, []);
 
   return (
@@ -68,7 +49,7 @@ export default function Room() {
           <img
             src={standardImage}
             alt="Standardrum"
-            className="room-card-image"
+            className={`room-card-image ${standardLoaded ? "loaded" : ""}`}
           />
           <div className="room-card-content">
             <h3 className="description-title-room">Standardrum</h3>
@@ -102,7 +83,7 @@ export default function Room() {
           <img
             src={superiorImage}
             alt="Superiorrum"
-            className="room-card-image"
+            className={`room-card-image ${superiorLoaded ? "loaded" : ""}`}
           />
           <div className="room-card-content">
             <h3 className="description-title-room">Superiorrum</h3>
@@ -141,7 +122,11 @@ export default function Room() {
         </article>
 
         <article className="room-card">
-          <img src={suiteImage} alt="Svit" className="room-card-image" />
+          <img 
+          src={suiteImage} 
+          alt="Svit" 
+          className={`room-card-image ${suiteLoaded ? "loaded" : ""}`} 
+          />
           <div className="room-card-content">
             <h3 className="description-title-room">Svit</h3>
             <p className="description-body-room">
@@ -174,7 +159,11 @@ export default function Room() {
         </article>
 
         <article className="room-card">
-          <img src={familyImage} alt="Familjerum" className="room-card-image" />
+          <img 
+          src={familyImage} 
+          alt="Familjerum" 
+          className={`room-card-image ${familyLoaded ? "loaded" : ""}`} 
+          />
           <div className="room-card-content">
             <h3 className="description-title-room">Familjerum</h3>
             <p className="description-body-room">

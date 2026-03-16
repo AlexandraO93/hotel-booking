@@ -1,6 +1,6 @@
 import "./BookingForm.css";
 import { useNavigate } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import confirmationImage from "../assets/confirmation.png";
 import confirmationImageSmall from "../assets/confirmation-compressed.png";
 
@@ -16,17 +16,23 @@ export default function BookingForm() {
   const [requests, setRequests] = useState("");
 
   const navigate = useNavigate();
-const [error, setError] = useState("");
+  const [error, setError] = useState("");
   const [heroImage, setHeroImage] = useState(confirmationImageSmall);
+  const [heroLoaded, setHeroLoaded] = useState(false);
+
+  function preloadImage(setImage, setLoaded, largeImage) {
+    const img = new Image();
+    img.src = largeImage;
+
+    img.onload = () => {
+      setImage(largeImage);
+      setLoaded(true);
+    };
+  }
 
   useEffect(() => {
-      const img = new Image();
-      img.src = confirmationImage;
-  
-      img.onload = () => {
-        setHeroImage(confirmationImage);
-      };
-    }, []);
+    preloadImage(setHeroImage, setHeroLoaded, confirmationImage);
+  }, []);
 
   function randomBookingNumber() {
     let random = Math.floor(100000 + Math.random() * 900000);
@@ -71,18 +77,17 @@ const [error, setError] = useState("");
 
   return (
     <div className="booking-form-page-container">
-        <div
-          className="confirmation-hero-img"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url(${heroImage})`,
-          }}
-        ></div>
-      
+      <div
+        className={`confirmation-hero-img ${heroLoaded ? "loaded" : ""}`}
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url(${heroImage})`,
+        }}
+      ></div>
 
       <div className="booking-form-layout">
         <header>
-        <h4 className="booking-form-headline">Ansvarig för bokningen</h4>
-      </header>
+          <h4 className="booking-form-headline">Ansvarig för bokningen</h4>
+        </header>
         <form className="booking-form-input">
           <div className="form-name">
             <input
@@ -92,7 +97,7 @@ const [error, setError] = useState("");
               value={firstName}
               onChange={(e) => {
                 setFirstName(e.target.value);
-            setError("");
+                setError("");
               }}
             />
             <input
@@ -115,7 +120,7 @@ const [error, setError] = useState("");
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
-            setError("");
+                setError("");
               }}
             />
             <input
@@ -125,7 +130,7 @@ const [error, setError] = useState("");
               value={confirmedEmail}
               onChange={(e) => {
                 setConfirmedEmail(e.target.value);
-            setError("");
+                setError("");
               }}
             />
           </div>
@@ -162,7 +167,7 @@ const [error, setError] = useState("");
               value={phonenumber}
               onChange={(e) => {
                 setPhonenumber(e.target.value);
-            setError("");
+                setError("");
               }}
             />
           </div>
@@ -186,7 +191,7 @@ const [error, setError] = useState("");
 
           <p className="form-info">Bokningen betalas på plats på hotellet</p>
 
-            {error && <p className="booking-form-error">{error}</p>}
+          {error && <p className="booking-form-error">{error}</p>}
 
           <div className="form-btns">
             <button

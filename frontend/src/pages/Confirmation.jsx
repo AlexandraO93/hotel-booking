@@ -15,15 +15,21 @@ export default function Confirmation() {
   const navigate = useNavigate();
 
   const [heroImage, setHeroImage] = useState(confirmationImageSmall);
+  const [heroLoaded, setHeroLoaded] = useState(false);
 
-  useEffect(() => {
+ function preloadImage(setImage, setLoaded, largeImage) {
     const img = new Image();
-    img.src = confirmationImage;
+    img.src = largeImage;
 
     img.onload = () => {
-      setHeroImage(confirmationImage);
+      setImage(largeImage);
+      setLoaded(true);
     };
-  }, []);
+  }
+
+  useEffect (() => {
+    preloadImage(setHeroImage, setHeroLoaded, confirmationImage)
+  },[]);
 
   let nights = 0;
 
@@ -49,7 +55,7 @@ export default function Confirmation() {
     <>
       <div className="confirmation-page-container">
         <div
-          className="confirmation-hero-img"
+          className={`confirmation-hero-img ${heroLoaded ? "loaded" : ""}`}
           style={{
             backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url(${heroImage})`,
           }}

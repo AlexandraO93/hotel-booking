@@ -150,6 +150,14 @@ p.checkout-includes {
   overflow: hidden;
   box-shadow: 4px 3px 2px rgba(0, 0, 0, 0.5);
   margin-bottom: 1rem;
+  transition: filter 0.35s ease, opacity 0.35s ease;
+  filter: blur(6px);
+  opacity: 0.95;
+}
+
+.addon-card-image.loaded {
+  filter: blur(0);
+  opacity: 1;
 }
 
 .addon-desc {
@@ -165,7 +173,8 @@ p.checkout-includes {
 
 .checkout-btns {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
   width: 90%;
 }
 
@@ -190,7 +199,7 @@ p.checkout-includes {
   font-size: clamp(0.75rem, 1vw, 1.125rem);
   background: rgba(171, 153, 105, 0.795);
   border-radius: 10px;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem 0.3rem;
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);

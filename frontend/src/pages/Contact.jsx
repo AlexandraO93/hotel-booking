@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 export default function Contact() {
   const [heroImage, setHeroImage] = useState(contactImageSmall);
+  const [heroLoaded, setHeroLoaded] = useState(false);
+
   const [name, setName] = useState("");
   const [bookingReference, setBookingReference] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
@@ -15,14 +17,19 @@ export default function Contact() {
   const [successMessage, setSuccessMessage] = useState("");
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    const img = new Image();
-    img.src = contactImage;
-
-    img.onload = () => {
-      setHeroImage(contactImage);
-    };
-  }, []);
+  function preloadImage(setImage, setLoaded, largeImage) {
+      const img = new Image();
+      img.src = largeImage;
+  
+      img.onload = () => {
+        setImage(largeImage);
+        setLoaded(true);
+      };
+    }
+  
+    useEffect (() => {
+      preloadImage(setHeroImage, setHeroLoaded, contactImage)
+    },[]);
 
   function handleSendContactForm() {
     if (
@@ -59,7 +66,7 @@ export default function Contact() {
   return (
     <div className="contact-page">
       <div
-        className="contact-img"
+        className={`contact-img ${heroLoaded ? "loaded" : ""}`}
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${heroImage})`,
         }}

@@ -17,7 +17,15 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: filter 0.35s ease, opacity 0.35s ease;
+  filter: blur(6px);
+  opacity: 0.95;
   z-index: 1;
+}
+
+.confirmation-hero-img.loaded {
+  filter: blur(0);
+  opacity: 1;
 }
 
 .confirmation-hero-content {

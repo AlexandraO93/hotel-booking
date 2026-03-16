@@ -5,20 +5,26 @@ import { useState, useEffect } from "react";
 
 export default function AboutUs() {
   const [heroImage, setHeroImage] = useState(aboutUsImageSmall);
+  const [heroLoaded, setHeroLoaded] = useState(false);
 
-  useEffect(() => {
+function preloadImage(setImage, setLoaded, largeImage) {
     const img = new Image();
-    img.src = aboutUsImage;
+    img.src = largeImage;
 
     img.onload = () => {
-      setHeroImage(aboutUsImage);
+      setImage(largeImage);
+      setLoaded(true);
     };
-  }, []);
+  }
+
+  useEffect (() => {
+    preloadImage(setHeroImage, setHeroLoaded, aboutUsImage)
+  },[]);
 
   return (
     <div className="about-us-page">
       <div
-        className="about-us-img"
+        className={`about-us-img ${heroLoaded ? "loaded" : ""}`}
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url(${heroImage})`,
         }}

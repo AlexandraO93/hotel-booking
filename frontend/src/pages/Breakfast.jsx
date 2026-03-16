@@ -5,19 +5,26 @@ import { useState, useEffect } from "react";
 
 export default function Breakfast() {
   const [heroImage, setHeroImage] = useState(breakfastImageSmall);
+  const [heroLoaded, setHeroLoaded] = useState(false);
 
-  useEffect(() => {
+function preloadImage(setImage, setLoaded, largeImage) {
     const img = new Image();
-    img.src = breakfastImage;
+    img.src = largeImage;
 
     img.onload = () => {
-      setHeroImage(breakfastImage);
+      setImage(largeImage);
+      setLoaded(true);
     };
-  }, []);
+  }
+
+  useEffect (() => {
+    preloadImage(setHeroImage, setHeroLoaded, breakfastImage)
+  },[]);
+
   return (
     <div className="menu-page-container">
       <div
-        className="menu-hero-img"
+        className={`menu-hero-img ${heroLoaded ? "loaded" : ""}`}
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url(${heroImage})`,
         }}
