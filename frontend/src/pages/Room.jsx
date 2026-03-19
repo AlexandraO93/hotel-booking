@@ -8,6 +8,7 @@ import suiteRoomImageSmall from "../assets/suite-room-compressed.png";
 import familyRoomImage from "../assets/family-room.png";
 import familyRoomImageSmall from "../assets/family-room-compressed.png";
 import { useState, useEffect } from "react";
+import { preloadImage } from "../utils/imageUtils";
 
 export default function Room() {
   const [standardImage, setStandardImage] = useState(standardRoomImageSmall);
@@ -19,14 +20,7 @@ export default function Room() {
   const [familyImage, setFamilyImage] = useState(familyRoomImageSmall);
   const [familyLoaded, setFamilyLoaded] = useState(false);
 
-  function preloadImage(setImage, setLoaded, largeImage) {
-    const img = new Image();
-    img.src = largeImage;
-    img.onload = () => {
-      setImage(largeImage);
-      setLoaded(true);
-    };
-  }
+  
 
   useEffect(() => {
     preloadImage(setStandardImage, setStandardLoaded, standardRoomImage);

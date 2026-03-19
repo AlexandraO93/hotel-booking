@@ -2,51 +2,54 @@ import "./Qa.css";
 import qaImage from "../assets/qa.png";
 import qaImageSmall from "../assets/qa-compressed.png";
 import { useState, useEffect } from "react";
+import { preloadImage } from "../utils/imageUtils";
 
 export default function Qa() {
   const [heroImage, setHeroImage] = useState(qaImageSmall);
+  const [heroLoaded, setHeroLoaded] = useState(false);
 
   useEffect(() => {
-    const img = new Image();
-    img.src = qaImage;
-
-    img.onload = () => {
-      setHeroImage(qaImage);
-    };
+   preloadImage(setHeroImage, setHeroLoaded, qaImage);
   }, []);
 
-  const [questionOpen1, setQuestionOpen1] = useState(false);
-  const [questionOpen2, setQuestionOpen2] = useState(false);
-  const [questionOpen3, setQuestionOpen3] = useState(false);
-  const [questionOpen4, setQuestionOpen4] = useState(false);
-  const [questionOpen5, setQuestionOpen5] = useState(false);
-  const [questionOpen6, setQuestionOpen6] = useState(false);
-  const [questionOpen7, setQuestionOpen7] = useState(false);
-  const [questionOpen8, setQuestionOpen8] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
 
-  const toggle1 = () => {
-    setQuestionOpen1((prev) => !prev);
-  };
-  const toggle2 = () => {
-    setQuestionOpen2((prev) => !prev);
-  };
-  const toggle3 = () => {
-    setQuestionOpen3((prev) => !prev);
-  };
-  const toggle4 = () => {
-    setQuestionOpen4((prev) => !prev);
-  };
-  const toggle5 = () => {
-    setQuestionOpen5((prev) => !prev);
-  };
-  const toggle6 = () => {
-    setQuestionOpen6((prev) => !prev);
-  };
-  const toggle7 = () => {
-    setQuestionOpen7((prev) => !prev);
-  };
-  const toggle8 = () => {
-    setQuestionOpen8((prev) => !prev);
+  const questions = [
+    {
+      question: "Vad gäller för av- och ombokning?",
+      answer: "Avbokning upp till max 4 rum ska ske senast 2 dagar innan ankomst (senast 15.00), samma gäller vid online bokning men då uttas en avboknings avgift på 100kr. För grupper/konferenser - vänligen kontakta oss via telefon på 070-123 45 67."
+    },
+    {
+      question: " När är in- och utcheckning?",
+      answer: "Incheckning 15:00. <br /> Utcheckning senast vid 11:00"
+    },
+    {
+      question: "Ingår wifi?",
+      answer: "Trådlöst internet finns på hotellet och är fritt att nyttja för samtliga hotellgäster."
+    },
+    {
+      question: "Vad gäller för av- och ombokning?",
+      answer: "Avbokning upp till max 4 rum ska ske senast 2 dagar innan ankomst (senast 15.00), samma gäller vid online bokning men då uttas en avboknings avgift på 100kr. För grupper/konferenser - vänligen kontakta oss via telefon på 070-123 45 67."
+    },{
+      question: "Vad gäller för av- och ombokning?",
+      answer: "Avbokning upp till max 4 rum ska ske senast 2 dagar innan ankomst (senast 15.00), samma gäller vid online bokning men då uttas en avboknings avgift på 100kr. För grupper/konferenser - vänligen kontakta oss via telefon på 070-123 45 67."
+    },{
+      question: "Vad gäller för av- och ombokning?",
+      answer: "Avbokning upp till max 4 rum ska ske senast 2 dagar innan ankomst (senast 15.00), samma gäller vid online bokning men då uttas en avboknings avgift på 100kr. För grupper/konferenser - vänligen kontakta oss via telefon på 070-123 45 67."
+    },{
+      question: "Vad gäller för av- och ombokning?",
+      answer: "Avbokning upp till max 4 rum ska ske senast 2 dagar innan ankomst (senast 15.00), samma gäller vid online bokning men då uttas en avboknings avgift på 100kr. För grupper/konferenser - vänligen kontakta oss via telefon på 070-123 45 67."
+    },{
+      question: "Vad gäller för av- och ombokning?",
+      answer: "Avbokning upp till max 4 rum ska ske senast 2 dagar innan ankomst (senast 15.00), samma gäller vid online bokning men då uttas en avboknings avgift på 100kr. För grupper/konferenser - vänligen kontakta oss via telefon på 070-123 45 67."
+    },
+  ];
+
+  function toggleQuestion(index) {
+    setOpenIndex(prev => (prev === index ? null : index));
+    questions.map(question, index) => (
+      question.
+    )
   };
 
   return (
