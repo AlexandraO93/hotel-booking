@@ -1,88 +1,21 @@
 import "./Booking.css";
-import standardRoomImage from "../assets/standard-room.png";
-import standardRoomImageSmall from "../assets/standard-room-compressed.png";
-import superiorRoomImageSmall from "../assets/superior-room-compressed.png";
-import superiorRoomImage from "../assets/superior-room.png";
-import suiteRoomImageSmall from "../assets/suite-room-compressed.png";
-import suiteRoomImage from "../assets/suite-room.png";
-import familyRoomImageSmall from "../assets/family-room-compressed.png";
-import familyRoomImage from "../assets/family-room.png";
+import { roomsData } from "../data/roomsData";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useImagePreload } from "../hooks/useImagePreload";
+
+function BookingRoomImage({ room }) {
+  const { image } = useImagePreload(room.imageSmall, room.imageLarge);
+
+  return <img src={image} alt={room.alt} className="booking-room-image" />;
+}
 
 export default function Booking() {
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [showAddons, setShowAddons] = useState(false);
   const [dinnerIncluded, setDinnerIncluded] = useState(false);
-  const [standardImage, setStandardImage] = useState(standardRoomImageSmall);
-  const [superiorImage, setSuperiorImage] = useState(superiorRoomImageSmall);
-  const [suiteImage, setSuiteImage] = useState(suiteRoomImageSmall);
-  const [familyImage, setFamilyImage] = useState(familyRoomImageSmall);
-  const [standardLoaded, setStandardLoaded] = useState(false);
-  const [superiorLoaded, setSuperiorLoaded] = useState(false);
-  const [suiteLoaded, setSuiteLoaded] = useState(false);
-  const [familyLoaded, setFamilyLoaded] = useState(false);
 
   const navigate = useNavigate();
-
-  function preloadImage(setImage, setLoaded, largeImage) {
-    const img = new Image();
-    img.src = largeImage;
-    img.onload = () => {
-      setImage(largeImage);
-      setLoaded(true);
-    };
-  }
-
-  useEffect(() => {
-    preloadImage(setStandardImage, setStandardLoaded, standardRoomImage);
-    preloadImage(setSuperiorImage, setSuperiorLoaded, superiorRoomImage);
-    preloadImage(setSuiteImage, setSuiteLoaded, suiteRoomImage);
-    preloadImage(setFamilyImage, setFamilyLoaded, familyRoomImage);
-  }, []);
-
-  const rooms = [
-    {
-      id: 1,
-      name: "Standardrum",
-      maxGuests: 2,
-      shortDescription:
-        "Ett ljust och bekvämt rum med allt du behöver för en avkopplande vistelse.",
-      image: standardImage,
-      loaded: standardLoaded,
-      price: 1100,
-    },
-    {
-      id: 2,
-      name: "Superiorrum",
-      maxGuests: 2,
-      shortDescription:
-        "Ett rymligare rum med extra komfort och en lugn, harmonisk känsla.",
-      image: superiorImage,
-      loaded: superiorLoaded,
-      price: 1500,
-    },
-    {
-      id: 3,
-      name: "Svit",
-      maxGuests: 3,
-      shortDescription:
-        "En elegant svit med generösa ytor för dig som vill bo extra bekvämt.",
-      image: suiteImage,
-      loaded: suiteLoaded,
-      price: 2200,
-    },
-    {
-      id: 4,
-      name: "Familjerum",
-      maxGuests: 4,
-      shortDescription:
-        "Perfekt för familjen, med gott om plats och bekväma sovlösningar.",
-      image: familyImage,
-      loaded: familyLoaded,
-      price: 1800,
-    },
-  ];
 
   const savedSearch = JSON.parse(localStorage.getItem("savedSearch")) || {};
 
@@ -99,7 +32,7 @@ export default function Booking() {
 
   const guests = savedSearch.guests ?? 1;
 
-  const availableRooms = rooms.filter((room) => room.maxGuests >= guests);
+  const availableRooms = roomsData.filter((room) => room.maxGuests >= guests);
 
   function handleUpdateSearch() {
     navigate("/hotel-booking");
@@ -212,7 +145,7 @@ export default function Booking() {
                   <div className="booking-room-card" key={room.id}>
                     {isSelectedCard ? (
                       <div className="booking-room-content booking-addon-content">
-                        <h3 className="booking-room-name">{room.name}</h3>
+                        <h3 className="booking-room-name">{room.title}</h3>
                         <p className="booking-room-desc">
                           Vill du lägga till middag?
                         </p>
@@ -257,20 +190,17 @@ export default function Booking() {
                       </div>
                     ) : (
                       <>
-                        <img
-                          src={room.image}
-                          alt={room.name}
-                          className={`booking-room-image ${room.loaded ? "loaded" : ""}`}
-                        />
+                        <BookingRoomImage room={room} />
 
                         <div className="booking-room-content">
-                          <h3 className="booking-room-name">{room.name}</h3>
+                          <h3 className="booking-room-name">{room.title}</h3>
                           <p className="booking-room-desc">
                             {room.shortDescription}
                           </p>
                           <p className="booking-room-max">
                             Passar upp till {room.maxGuests} gäster
                           </p>
+
                           <button
                             className="booking-room-btn"
                             type="button"

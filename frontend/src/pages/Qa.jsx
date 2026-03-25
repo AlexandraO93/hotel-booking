@@ -1,16 +1,11 @@
 import "./Qa.css";
 import qaImage from "../assets/qa.png";
 import qaImageSmall from "../assets/qa-compressed.png";
-import { useState, useEffect } from "react";
-import { preloadImage } from "../utils/imageUtils";
+import { useState } from "react";
+import { useImagePreload } from "../hooks/useImagePreload";
 
 export default function Qa() {
-  const [heroImage, setHeroImage] = useState(qaImageSmall);
-  const [heroLoaded, setHeroLoaded] = useState(false);
-
-  useEffect(() => {
-   preloadImage(setHeroImage, setHeroLoaded, qaImage);
-  }, []);
+    const { image: heroImage, loaded: heroLoaded } = useImagePreload(qaImageSmall, qaImage);
 
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -56,7 +51,7 @@ export default function Qa() {
   return (
     <div className="qa-page">
       <div
-        className={`qa-img ${heroLoaded ? "loaded" : ""}`}
+        className="qa-img"
         style={{
           backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.0005), rgba(255, 255, 255, 0.0005)), url(${heroImage})`,
         }}
